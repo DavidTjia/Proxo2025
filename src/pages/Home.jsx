@@ -1,0 +1,584 @@
+import React, { useState, useEffect, useRef } from "react";
+import logogl from "@/assets/guideline.png";
+import logopx from "@/assets/proxo.png";
+import category1 from "@/assets/Short-Movie.svg";
+import category2 from "@/assets/Web dev.svg";
+import category3 from "@/assets/Business Plan.svg";
+import category4 from "@/assets/Mobile dev.svg";
+import category5 from "@/assets/Business Case.svg";
+import sponsor1 from "@/assets/Corislogo.png";
+import sponsor2 from "@/assets/Edukasi.svg";
+import sponsor3 from "@/assets/Klabat.svg";
+import ReactTypingEffect from "react-typing-effect";
+import useIntersectionObserver from "@/components/useIntersectionObserver";
+import Footer from "@/components/Footer";
+import { Navigate, useNavigate } from "react-router-dom";
+import poster from "../assets/Poster.png";
+
+const Home = () => {
+  //fadein animasi
+  const [ref1, isVisible1] = useIntersectionObserver();
+  const [ref2, isVisible2] = useIntersectionObserver();
+  const [ref3, isVisible3] = useIntersectionObserver();
+  const [ref4, isVisible4] = useIntersectionObserver();
+  const [ref5, isVisible5] = useIntersectionObserver();
+
+  const navigate = useNavigate();
+
+  const carouselRef = useRef(null);
+  const listRef = useRef(null);
+  const [isClickable, setIsClickable] = useState(true);
+  const calculateTimeLeft = () => {
+    const targetDate = new Date("2025-02-17");
+    const now = new Date();
+    const diff = targetDate.getTime() - now.getTime();
+    return {
+      days: Math.max(Math.floor(diff / (1000 * 60 * 60 * 24)), 0),
+      hours: Math.max(Math.floor((diff / (1000 * 60 * 60)) % 24), 0),
+      minutes: Math.max(Math.floor((diff / 1000 / 60) % 60), 0),
+      seconds: Math.max(Math.floor((diff / 1000) % 60), 0),
+    };
+  };
+
+  const openGmail = () => {
+    window.location.href = "mailto:ProxoCoris.unklab@gmail.com";
+  };
+
+  const sponsors = [
+    { id: 1, name: "Sponsor 1", logo: sponsor1 },
+    { id: 2, name: "Sponsor 2", logo: sponsor2 },
+    { id: 3, name: "Sponsor 3", logo: sponsor3 },
+  ];
+
+  const carouselData = [
+    {
+      image: category1,
+      topic: "Short Movies",
+    },
+    {
+      image: category2,
+      topic: "Web Development",
+    },
+    {
+      image: category3,
+      topic: "Business Plan",
+    },
+    {
+      image: category4,
+      topic: "Mobile Development",
+    },
+    {
+      image: category5,
+      topic: "Business Case",
+    },
+  ];
+
+  const timelineData = [
+    {
+      date: "27 January - 3 February",
+      title: "Wave 1 Early Bird Registration",
+      content: "First wave of early bird registration period",
+    },
+    {
+      date: "4 February - 10 February",
+      title: "Wave 2 Early Bird Registration",
+      content: "Second wave of early bird registration period",
+    },
+    {
+      date: "11 February - 17 February",
+      title: "Normal Registration",
+      content: "Regular registration period",
+    },
+    {
+      date: "24 February 2025",
+      title: "Proposal Submission",
+      content: "Web Development | Bionic Arm | Mobile App",
+    },
+    {
+      date: "3 March 2025",
+      title: "Proposal Selection Announcement",
+      content: "Announcement of selected proposals",
+    },
+    {
+      date: "Will be announce",
+      title: "Technical Meeting",
+      content: "Technical meeting for selected participants",
+    },
+    {
+      date: "Will be announce",
+      title: "Pitching",
+      content: "Project pitching session",
+    },
+    {
+      date: "Will be announce",
+      title: "Final Announcement",
+      content: "Final results announcement",
+    },
+  ];
+
+  const showSlider = (type) => {
+    if (!isClickable) return;
+    setIsClickable(false);
+
+    const items = listRef.current.querySelectorAll(".item");
+    carouselRef.current.classList.remove("next", "prev");
+
+    if (type === "next") {
+      listRef.current.appendChild(items[0]);
+      carouselRef.current.classList.add("next");
+    } else {
+      listRef.current.prepend(items[items.length - 1]);
+      carouselRef.current.classList.add("prev");
+    }
+
+    setTimeout(() => {
+      setIsClickable(true);
+    }, 2000);
+  };
+
+  const handleSeeMore = (title) => {
+    console.log(title);
+    if (
+      title === "Short Movies" ||
+      title === "Web Development" ||
+      title === "Business Plan" ||
+      title === "Mobile Development" ||
+      title === "Business Case"
+    ) {
+      window.open(
+        "https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+        "_blank", // Membuka di tab baru
+      );
+    }
+  };
+
+  const handleBack = () => {
+    carouselRef.current.classList.remove("showDetail");
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  {
+    /*Animasi Timeline*/
+  }
+  const [activeIndex, setActiveIndex] = useState(null);
+  const itemRefs = useRef([]);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const index = parseInt(entry.target.getAttribute("data-index"));
+        if (entry.isIntersecting) {
+          setActiveIndex(index);
+        }
+      });
+    }, options);
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  //animasi typing
+
+  const TimeUnit = ({ value, label }) => (
+    <div className="flex min-w-[80px] flex-col items-center">
+      <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1 shadow-xl transition-all duration-300 ease-in-out hover:scale-105 md:h-32 md:w-32">
+        <div className="flex h-full w-full items-center justify-center rounded-lg bg-white/90 backdrop-blur-sm">
+          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-4xl font-bold text-transparent md:text-6xl">
+            {String(value).padStart(2, "0")}
+          </span>
+        </div>
+      </div>
+      <div className="text-base font-medium text-gray-600 md:text-lg">
+        {label}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="blur-7xl absolute -left-48 h-96 w-96 rounded-full bg-purple-100"></div>
+        <div className="blur-7xl absolute -right-48 bottom-14 h-96 w-96 rounded-full bg-purple-100"></div>
+      </div>
+
+      {/* Main content */}
+      <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-10">
+        {/* Hero Section */}
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-10 space-y-6">
+            <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+              Welcome to the
+              <br />
+              <span className="animate-text mt-2 inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                PROXOCORIS
+              </span>
+              <span className="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                International
+              </span>
+              <span className="mt-2 block text-3xl md:text-5xl">
+                community!
+              </span>
+            </h1>
+
+            <div className="mx-auto max-w-2xl text-lg text-gray-600 md:text-xl">
+              <ReactTypingEffect
+                text={["Join us and showcase your brilliance in Proxocoris!"]}
+                speed={50}
+                eraseSpeed={30}
+                typingDelay={100}
+              />
+            </div>
+          </div>
+
+          {/* Countdown section */}
+          <div className="relative mb-20">
+            <div className="mb-6 text-xl font-semibold text-gray-700 sm:text-2xl">
+              Registration closes in:
+            </div>
+            <div className="flex flex-nowrap items-center justify-center gap-3 overflow-x-auto sm:gap-4 md:gap-8">
+              {/* Days */}
+              <TimeUnit
+                value={timeLeft.days}
+                label="Days"
+                className="text-lg sm:text-2xl md:text-3xl"
+              />
+              <div className="text-2xl font-bold text-gray-400 sm:text-3xl md:text-4xl">
+                :
+              </div>
+              {/* Hours */}
+              <TimeUnit
+                value={timeLeft.hours}
+                label="Hours"
+                className="text-lg sm:text-2xl md:text-3xl"
+              />
+              <div className="text-2xl font-bold text-gray-400 sm:text-3xl md:text-4xl">
+                :
+              </div>
+              {/* Minutes */}
+              <TimeUnit
+                value={timeLeft.minutes}
+                label="Minutes"
+                className="text-lg sm:text-2xl md:text-3xl"
+              />
+              <div className="text-2xl font-bold text-gray-400 sm:text-3xl md:text-4xl">
+                :
+              </div>
+              {/* Seconds */}
+              <TimeUnit
+                value={timeLeft.seconds}
+                label="Seconds"
+                className="text-lg sm:text-2xl md:text-3xl"
+              />
+            </div>
+          </div>
+
+          {/* poster proxo */}
+
+          <div>
+            <img src={poster} className="mb-20 scale-90" />
+          </div>
+
+          {/* Section What is Proxo */}
+
+          <div
+            ref={ref1}
+            className={`mb-32 transform transition-all duration-700 ease-in-out ${
+              isVisible1 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
+            }`}
+          >
+            <div className="flex flex-col items-center justify-between gap-16 md:flex-row">
+              <div className="text-left md:w-1/2">
+                <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+                  What is <span className="text-customGreen">proxo</span>?
+                </h2>
+                <p className="text-gray-600">
+                  At the heart of Klabat University's Faculty of Computer
+                  Science, PROXO (Project Extraordinary) returns with a renewed
+                  purpose: to unite technology and collaboration in the fight
+                  against poverty. With the theme "Innovation and Collaboration:
+                  Building Resilient Communities to End Poverty," PROXO
+                  transcends competition to become a movement. It calls on
+                  visionaries, innovators, and changemakers to harness
+                  technology for good. Together, we aim to create sustainable
+                  solutions that empower communities and pave the way toward a
+                  poverty-free future. PROXO isn't just about winning—it's about
+                  making an impact. Are you ready to join this mission and
+                  create solutions that matter? PROXO awaits.
+                </p>
+              </div>
+              <div className="md:w-1/2">
+                <img
+                  src={logopx}
+                  alt="Proxocoris Logo"
+                  className="mx-auto w-full max-w-md"
+                />
+              </div>
+            </div>
+          </div>
+          {/* Section Guideline */}
+          <div
+            ref={ref2}
+            className={`mb-10 transform transition-all duration-500 ease-in-out ${
+              isVisible2
+                ? "opacity-100 blur-0 sm:duration-700"
+                : "opacity-0 blur-2xl sm:duration-700"
+            }`}
+          >
+            <div className="flex flex-col-reverse items-center justify-between gap-16 md:flex-row">
+              <div className="md:w-1/2">
+                <img
+                  src={logogl}
+                  alt="Guideline Logo"
+                  className="mx-auto w-full max-w-md"
+                />
+              </div>
+              <div className="text-left md:w-1/2">
+                <h2 className="mb-6 text-3xl font-bold text-[#91261F] md:text-4xl">
+                  Guideline
+                </h2>
+                <p className="text-gray-600">
+                  To ensure a smooth journey through our process, we’ve designed
+                  a set of clear, easy-to-follow guidelines that will help you
+                  understand every step. Our aim is to provide you with all the
+                  necessary information, ensuring that you can confidently move
+                  forward and contribute to the mission. Whether you’re a
+                  first-time participant or a returning innovator, these
+                  guidelines will empower you to navigate the process with
+                  clarity, enabling you to focus on what truly matters—creating
+                  solutions that make a real impact.{" "}
+                  <a
+                    href="https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                    target="_blank"
+                    className="text-bold text-blue-600"
+                  >
+                    Explore Guidelines
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Category Section */}
+          <div
+            ref={ref5}
+            className={`mb-32 transform transition-all duration-700 ease-in-out ${
+              isVisible5 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
+            }`}
+          >
+            <div className="carousel" ref={carouselRef}>
+              <h2 className="mt-20 text-3xl font-bold md:text-4xl">Category</h2>
+              <div className="list" ref={listRef}>
+                {carouselData.map((item, index) => (
+                  <div className="item" key={index}>
+                    <img src={item.image} alt={`Category ${index + 1}`} />
+                    <div className="introduce">
+                      {/* <div className="title">{item.title}</div> */}
+                      <div className="topic">{item.topic}</div>
+                      <button
+                        className="seeMore"
+                        onClick={() => handleSeeMore(item.topic)}
+                      >
+                        SEE MORE &#8599;
+                      </button>
+                    </div>
+                    {/* <div className="detail">
+                    <div className="title">{item.detailTitle}</div>
+                    <div className="des">{item.detailDescription}</div>
+                  </div> */}
+                  </div>
+                ))}
+              </div>
+              <div className="arrows">
+                <button id="prev" onClick={() => showSlider("prev")}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="h-10 w-10"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </button>
+                <button id="next" onClick={() => showSlider("next")}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="h-10 w-10"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline Section */}
+          <div className="min-h-screen px-4 py-12">
+            <div className="mx-auto max-w-5xl">
+              <h1 className="mb-16 text-center text-3xl font-bold text-blue-800 md:text-4xl">
+                Event Timeline
+              </h1>
+
+              <div className="relative">
+                <div className="absolute left-4 h-full w-0.5 transform bg-gray-200 md:left-1/2 md:-translate-x-1/2">
+                  <div
+                    className="absolute top-0 w-full bg-blue-500 transition-all duration-700 ease-in-out"
+                    style={{
+                      height: `${activeIndex !== null ? (activeIndex + 1) * (100 / timelineData.length) : 0}%`,
+                      opacity: 0.6,
+                    }}
+                  />
+                </div>
+
+                {timelineData.map((item, index) => (
+                  <div
+                    key={index}
+                    ref={(el) => (itemRefs.current[index] = el)}
+                    data-index={index}
+                    className={`mb-12 transition-all duration-700 ease-out md:mb-20 ${activeIndex >= index ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+                  >
+                    <div
+                      className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""} items-start gap-8 md:items-center`}
+                    >
+                      <div className="w-full pl-12 md:w-5/12 md:pl-0">
+                        <div
+                          className={`relative rounded-xl border border-gray-100 bg-white p-6 shadow-lg ${index % 2 === 0 ? "md:text-right" : "md:text-left"} transition-all duration-700 ease-out ${activeIndex >= index ? "translate-y-0 scale-100 opacity-100" : "-translate-y-4 scale-95 opacity-0"}`}
+                        >
+                          <div className="mb-2 text-sm font-semibold text-blue-600">
+                            {item.date}
+                          </div>
+                          <h3 className="mb-3 text-xl font-bold text-gray-800">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-600">{item.content}</p>
+
+                          <div
+                            className={`absolute left-0 top-6 -translate-x-[2.2rem] transform transition-all duration-500 ease-out md:hidden ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                          >
+                            <div className="h-4 w-4 rounded-full border-4 border-white bg-blue-500 shadow-md" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="relative hidden justify-center md:flex md:w-2/12">
+                        <div className="absolute top-1/2 h-5 w-5 -translate-y-1/2 transform">
+                          <div
+                            className={`h-full w-full rounded-full border-4 border-white bg-blue-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="hidden w-5/12 md:block" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/*Sponsor section*/}
+          <div
+            ref={ref3}
+            className={`mb-32 transform transition-all duration-700 ease-in-out ${
+              isVisible3 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
+            }`}
+          >
+            <div className="container mx-auto px-4 py-8">
+              <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
+                Our Partnership
+              </h2>
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
+                {sponsors.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="flex p-4 duration-300 hover:shadow-md"
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} logo`}
+                      className="w-27 mx-auto h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/*Email section*/}
+          <div
+            ref={ref4}
+            className={`mb-32 transform transition-all duration-700 ease-in-out ${
+              isVisible4 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
+            }`}
+          >
+            <div className="mx-auto max-w-4xl px-4 py-16 text-center">
+              <h2 className="mb-8 text-4xl font-bold text-gray-800">
+                Ready to Join?
+              </h2>
+              <p className="mb-8 text-lg text-gray-600">
+                Take the first step towards participating in PROXOCORIS
+                International Competition. Contact us through email for
+                registration and inquiries.
+              </p>
+              <button
+                onClick={openGmail}
+                className="inline-flex items-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 text-lg font-semibold text-white transition-all duration-500 hover:scale-105 hover:shadow-lg"
+              >
+                <svg
+                  className="mr-2 h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                Contact Us via Email
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
