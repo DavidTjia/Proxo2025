@@ -6,7 +6,7 @@ import category2 from "@/assets/Web dev.svg";
 import category3 from "@/assets/Business Plan.svg";
 import category4 from "@/assets/Mobile dev.svg";
 import category5 from "@/assets/Business Case.svg";
-import sponsor1 from "@/assets/Coris.svg";
+import sponsor1 from "@/assets/Corislogo.png";
 import sponsor2 from "@/assets/Edukasi.svg";
 import sponsor3 from "@/assets/Klabat.svg";
 import ReactTypingEffect from "react-typing-effect";
@@ -518,16 +518,20 @@ const Home = () => {
             }`}
           >
             <div className="container mx-auto px-4 py-8">
-              <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
+              <h2 className="mb-8 text-center text-4xl font-bold text-gray-800">
                 Our Partnership
               </h2>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
                 {sponsors.map((sponsor) => (
                   <div
                     key={sponsor.id}
-                    className="items-centerrounded-lg flex bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-md"
+                    className="items-centerrounded-lg flex p-4 duration-300 hover:shadow-md"
                   >
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
+                    <img
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} logo`}
+                      className="w-23 h-full"
+                    />
                   </div>
                 ))}
               </div>
