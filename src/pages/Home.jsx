@@ -6,15 +6,9 @@ import category2 from "@/assets/Web dev.svg";
 import category3 from "@/assets/Business Plan.svg";
 import category4 from "@/assets/Mobile dev.svg";
 import category5 from "@/assets/Business Case.svg";
-<<<<<<< HEAD
-import sponsor1 from "@/assets/Coris.svg"
-import sponsor2 from "@/assets/Edukasi.svg"
-import sponsor3 from "@/assets/Klabat.svg"
-=======
-import sponsor1 from "@/assets/Corislogo.png";
+import sponsor1 from "@/assets/Coris.svg";
 import sponsor2 from "@/assets/Edukasi.svg";
 import sponsor3 from "@/assets/Klabat.svg";
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
 import Footer from "@/components/Footer";
@@ -51,15 +45,9 @@ const Home = () => {
   };
 
   const sponsors = [
-<<<<<<< HEAD
-    { id: 1, name: "Sponsor 1", logo: (sponsor1) },
-    { id: 2, name: "Sponsor 2", logo: (sponsor2) },
-    { id: 3, name: "Sponsor 3", logo: (sponsor3) },
-=======
     { id: 1, name: "Sponsor 1", logo: sponsor1 },
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
     { id: 3, name: "Sponsor 3", logo: sponsor3 },
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
   ];
 
   const carouselData = [
@@ -240,11 +228,7 @@ const Home = () => {
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-10 space-y-6">
-<<<<<<< HEAD
             <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-6xl">
-=======
-            <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
               Welcome to the
               <br />
               <span className="animate-text mt-2 inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
@@ -258,11 +242,7 @@ const Home = () => {
               </span>
             </h1>
 
-<<<<<<< HEAD
             <div className="mx-auto max-w-2xl text-sm text-gray-600 md:text-xl">
-=======
-            <div className="mx-auto max-w-2xl text-lg text-gray-600 md:text-xl">
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
               <ReactTypingEffect
                 text={["Join us and showcase your brilliance in Proxocoris!"]}
                 speed={50}
@@ -277,11 +257,7 @@ const Home = () => {
             <div className="mb-6 text-xl font-semibold text-gray-700 sm:text-2xl">
               Registration closes in:
             </div>
-<<<<<<< HEAD
             <div className="flex flex-nowrap items-center justify-center overflow-x-auto sm:gap-4 md:gap-8">
-=======
-            <div className="flex flex-nowrap items-center justify-center gap-3 overflow-x-auto sm:gap-4 md:gap-8">
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
               {/* Days */}
               <TimeUnit
                 value={timeLeft.days}
@@ -370,11 +346,7 @@ const Home = () => {
                 : "opacity-0 blur-2xl sm:duration-700"
             }`}
           >
-<<<<<<< HEAD
-            <div className="flex flex-col-reverse items-center justify-between  md:flex-row">
-=======
-            <div className="flex flex-col-reverse items-center justify-between gap-16 md:flex-row">
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
+            <div className="flex flex-col-reverse items-center justify-between md:flex-row">
               <div className="md:w-1/2">
                 <img
                   src={logogl}
@@ -416,13 +388,7 @@ const Home = () => {
             }`}
           >
             <div className="carousel" ref={carouselRef}>
-<<<<<<< HEAD
-                <h2 className="mt-20 text-3xl font-bold md:text-4xl">
-                  Category
-                </h2>
-=======
               <h2 className="mt-20 text-3xl font-bold md:text-4xl">Category</h2>
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
               <div className="list" ref={listRef}>
                 {carouselData.map((item, index) => (
                   <div className="item" key={index}>
@@ -482,15 +448,9 @@ const Home = () => {
           </div>
 
           {/* Timeline Section */}
-<<<<<<< HEAD
-          <div className="min-h-screen px-4 py-4">
-            <div className="mx-auto max-w-5xl">
-              <h1 className="mb-16 text-center text-3xl md:text-4xl font-bold text-blue-800">
-=======
-          <div className="min-h-screen px-4 py-12">
+          <div className="min-h-screen px-4">
             <div className="mx-auto max-w-5xl">
               <h1 className="mb-16 text-center text-3xl font-bold text-blue-800 md:text-4xl">
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
                 Event Timeline
               </h1>
 
@@ -565,20 +525,9 @@ const Home = () => {
                 {sponsors.map((sponsor) => (
                   <div
                     key={sponsor.id}
-<<<<<<< HEAD
-                    className="flex items-centerrounded-lg bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-md"
-=======
-                    className="flex p-4 duration-300 hover:shadow-md"
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
+                    className="items-centerrounded-lg flex bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-md"
                   >
-                    <img
-                      src={sponsor.logo}
-                      alt={`${sponsor.name} logo`}
-<<<<<<< HEAD
-=======
-                      className="w-27 mx-auto h-auto"
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
-                    />
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
                   </div>
                 ))}
               </div>
@@ -603,12 +552,7 @@ const Home = () => {
               <button
                 onClick={openGmail}
                 className="inline-flex items-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 text-lg font-semibold text-white transition-all duration-500 hover:scale-105 hover:shadow-lg"
-<<<<<<< HEAD
-              > 
-              
-=======
               >
->>>>>>> 215a584442a5a2b97e49b4e21cdc0ac79950468b
                 <svg
                   className="mr-2 h-5 w-5"
                   fill="none"
