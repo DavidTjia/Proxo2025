@@ -368,14 +368,14 @@ const Home = () => {
                   guidelines will empower you to navigate the process with
                   clarity, enabling you to focus on what truly matters—creating
                   solutions that make a real impact.{" "}
-                  <a
-                    href="https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-                    target="_blank"
-                    className="text-bold text-blue-600"
-                  >
-                    Explore Guidelines
-                  </a>
                 </p>
+                <a
+                  href="https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                  target="_blank"
+                  className=".text-base pt-2 font-bold text-blue-700"
+                >
+                  ➡ Explore Guidelines
+                </a>
               </div>
             </div>
           </div>
@@ -383,7 +383,7 @@ const Home = () => {
           {/* Category Section */}
           <div
             ref={ref5}
-            className={`mb-32 transform transition-all duration-700 ease-in-out ${
+            className={`mb-2 transform transition-all duration-700 ease-in-out ${
               isVisible5 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
             }`}
           >

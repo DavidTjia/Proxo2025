@@ -12,8 +12,11 @@ const Footer = () => {
             <img src={logopx} alt="Logo" className="mb-4 h-16" />
             <h2 className="text-xl font-bold">Proxo x Coris</h2>
             <p className="mt-2 text-gray-400">
-              Innovating for a better future. Join us to create meaningful
-              impacts together.
+              "Great ideas can come from anyone, anywhere. It's about creating
+              an environment where those ideas can flourish."
+              <br />
+              <br />
+              --Jensen Huang
             </p>
           </div>
 
@@ -93,7 +96,7 @@ const Footer = () => {
               <a
                 href="https://wa.me/6289530278287"
                 className="text-blue-600 hover:text-white"
-                targer="_blank"
+                target="_blank"
               >
                 +6289530278287
               </a>
