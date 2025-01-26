@@ -9,11 +9,13 @@ import category5 from "@/assets/Business Case.svg";
 import sponsor1 from "@/assets/Corislogo.png";
 import sponsor2 from "@/assets/Edukasi.svg";
 import sponsor3 from "@/assets/Klabat.svg";
+import sponsor4 from "@/assets/infolomba.png";
+import sponsor5 from "@/assets/search-logo.png";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
 import Footer from "@/components/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
-import poster from "../assets/Poster.png";
+import poster from "../assets/poster.png";
 
 const Home = () => {
   //fadein animasi
@@ -48,6 +50,8 @@ const Home = () => {
     { id: 1, name: "Sponsor 1", logo: sponsor1 },
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
     { id: 3, name: "Sponsor 3", logo: sponsor3 },
+    { id: 4, name: "Sponsor 4", logo: sponsor4 },
+    { id: 5, name: "Sponsor 5", logo: sponsor5 },
   ];
 
   const carouselData = [
@@ -145,15 +149,26 @@ const Home = () => {
       title === "Mobile Development" ||
       title === "Business Case"
     ) {
-      window.open(
-        "https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-        "_blank", // Membuka di tab baru
-      );
-    }
-  };
+      const driveLinks = {
+        "Short Movies":
+          "https://drive.google.com/drive/folders/18cmegs5pVEKpvxpoW6sBcRQ8r7TZDJcF",
+        "Web Development":
+          "https://drive.google.com/drive/folders/18ezmrilvhoSw7boc_5U1cTgKBuZpdBGI",
+        "Business Plan":
+          "https://drive.google.com/drive/folders/18IqZliz2rXplcRSxxxVXFa6VYUmPLJch",
+        "Mobile Development":
+          "https://drive.google.com/drive/folders/18_GCx7i-A-Zb66e_IdDinYM4X2bK1Djy",
+        "Business Case":
+          "https://drive.google.com/drive/folders/18I0yS486PaK5NK9r-E4_6vD5whJGTOdR",
+      };
 
-  const handleBack = () => {
-    carouselRef.current.classList.remove("showDetail");
+      const link = driveLinks[title];
+      if (link) {
+        window.open(link, "_blank");
+      } else {
+        console.log(`No drive link found for ${title}`);
+      }
+    }
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -296,8 +311,12 @@ const Home = () => {
 
           {/* poster proxo */}
 
-          <div>
-            <img src={poster} className="mb-20 scale-90" />
+          <div className="mb-20 flex w-full items-center justify-center px-4">
+            <img
+              src={poster}
+              className="max-w-full object-contain md:max-w-md lg:max-w-lg xl:max-w-xl"
+              alt="Poster"
+            />
           </div>
 
           {/* Section What is Proxo */}
@@ -367,15 +386,15 @@ const Home = () => {
                   first-time participant or a returning innovator, these
                   guidelines will empower you to navigate the process with
                   clarity, enabling you to focus on what truly matters—creating
-                  solutions that make a real impact.{" "}
+                  solutions that make a real impact. <br></br>
+                  <a
+                    href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
+                    target="_blank"
+                    className="text-bold text-blue-600"
+                  >
+                    Explore Guidelines
+                  </a>
                 </p>
-                <a
-                  href="https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-                  target="_blank"
-                  className=".text-base pt-2 font-bold text-blue-700"
-                >
-                  ➡ Explore Guidelines
-                </a>
               </div>
             </div>
           </div>
@@ -447,17 +466,20 @@ const Home = () => {
             </div>
           </div>
 
+          {/* Timeline Sec
+
+
           {/* Timeline Section */}
-          <div className="min-h-screen px-4">
+          <div className="min-h-screen px-4 py-4">
             <div className="mx-auto max-w-5xl">
-              <h1 className="mb-16 text-center text-3xl font-bold text-blue-800 md:text-4xl">
+              <h1 className="mb-16 text-center text-3xl font-bold text-purple-800 md:text-4xl">
                 Event Timeline
               </h1>
 
               <div className="relative">
                 <div className="absolute left-4 h-full w-0.5 transform bg-gray-200 md:left-1/2 md:-translate-x-1/2">
                   <div
-                    className="absolute top-0 w-full bg-blue-500 transition-all duration-700 ease-in-out"
+                    className="absolute top-0 w-full bg-purple-500 transition-all duration-700 ease-in-out"
                     style={{
                       height: `${activeIndex !== null ? (activeIndex + 1) * (100 / timelineData.length) : 0}%`,
                       opacity: 0.6,
@@ -479,7 +501,7 @@ const Home = () => {
                         <div
                           className={`relative rounded-xl border border-gray-100 bg-white p-6 shadow-lg ${index % 2 === 0 ? "md:text-right" : "md:text-left"} transition-all duration-700 ease-out ${activeIndex >= index ? "translate-y-0 scale-100 opacity-100" : "-translate-y-4 scale-95 opacity-0"}`}
                         >
-                          <div className="mb-2 text-sm font-semibold text-blue-600">
+                          <div className="mb-2 text-sm font-semibold text-purple-600">
                             {item.date}
                           </div>
                           <h3 className="mb-3 text-xl font-bold text-gray-800">
@@ -490,7 +512,7 @@ const Home = () => {
                           <div
                             className={`absolute left-0 top-6 -translate-x-[2.2rem] transform transition-all duration-500 ease-out md:hidden ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           >
-                            <div className="h-4 w-4 rounded-full border-4 border-white bg-blue-500 shadow-md" />
+                            <div className="h-4 w-4 rounded-full border-4 border-white bg-purple-500 shadow-md" />
                           </div>
                         </div>
                       </div>
@@ -498,7 +520,7 @@ const Home = () => {
                       <div className="relative hidden justify-center md:flex md:w-2/12">
                         <div className="absolute top-1/2 h-5 w-5 -translate-y-1/2 transform">
                           <div
-                            className={`h-full w-full rounded-full border-4 border-white bg-blue-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                            className={`h-full w-full rounded-full border-4 border-black bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           />
                         </div>
                       </div>
@@ -518,7 +540,7 @@ const Home = () => {
             }`}
           >
             <div className="container mx-auto px-4 py-8">
-              <h2 className="mb-8 text-center text-4xl font-bold text-gray-800">
+              <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
                 Our Partnership
               </h2>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
@@ -527,11 +549,7 @@ const Home = () => {
                     key={sponsor.id}
                     className="items-centerrounded-lg flex p-4 duration-300 hover:shadow-md"
                   >
-                    <img
-                      src={sponsor.logo}
-                      alt={`${sponsor.name} logo`}
-                      className="w-23 h-full"
-                    />
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
                   </div>
                 ))}
               </div>
