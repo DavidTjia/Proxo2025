@@ -7,13 +7,15 @@ import category3 from "@/assets/Business Plan.svg";
 import category4 from "@/assets/Mobile dev.svg";
 import category5 from "@/assets/Business Case.svg";
 import sponsor1 from "@/assets/Corislogo.png";
-import sponsor2 from "@/assets/Edukasi.svg";
+import sponsor2 from "@/assets/logoEdukasi.png";
 import sponsor3 from "@/assets/Klabat.svg";
+import sponsor4 from "@/assets/logoinfolomba.png";
+import sponsor5 from "@/assets/SEARCHLOGO.png";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
 import Footer from "@/components/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
-import poster from "../assets/Poster.png";
+import poster from "../assets/flyerigs.png";
 
 const Home = () => {
   //fadein animasi
@@ -48,6 +50,8 @@ const Home = () => {
     { id: 1, name: "Sponsor 1", logo: sponsor1 },
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
     { id: 3, name: "Sponsor 3", logo: sponsor3 },
+    { id: 4, name: "Sponsor 4", logo: sponsor4 },
+    { id: 5, name: "Sponsor 5", logo: sponsor5 }
   ];
 
   const carouselData = [
@@ -76,23 +80,23 @@ const Home = () => {
   const timelineData = [
     {
       date: "27 January - 3 February",
-      title: "Wave 1 Early Bird Registration",
+      title: "1st Wave - Early Bird Registration",
       content: "First wave of early bird registration period",
     },
     {
       date: "4 February - 10 February",
-      title: "Wave 2 Early Bird Registration",
+      title: "2nd Wave - Early Bird Registration",
       content: "Second wave of early bird registration period",
     },
     {
       date: "11 February - 17 February",
-      title: "Normal Registration",
+      title: "Last Registration",
       content: "Regular registration period",
     },
     {
       date: "24 February 2025",
       title: "Proposal Submission",
-      content: "Web Development | Bionic Arm | Mobile App",
+      content: "Deadline to Submit Your Proposals",
     },
     {
       date: "3 March 2025",
@@ -146,8 +150,12 @@ const Home = () => {
       title === "Business Case"
     ) {
       window.open(
-        "https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-        "_blank", // Membuka di tab baru
+        "https://drive.google.com/drive/folders/18cmegs5pVEKpvxpoW6sBcRQ8r7TZDJcF?usp=sharing",
+        "https://drive.google.com/drive/folders/18ezmrilvhoSw7boc_5U1cTgKBuZpdBGI?usp=drive_link",
+        "https://drive.google.com/drive/folders/18ezmrilvhoSw7boc_5U1cTgKBuZpdBGI?usp=drive_link",
+        "https://drive.google.com/drive/folders/18IqZliz2rXplcRSxxxVXFa6VYUmPLJch?usp=drive_link",
+        "https://drive.google.com/drive/folders/18_GCx7i-A-Zb66e_IdDinYM4X2bK1Djy?usp=drive_link",
+        "https://drive.google.com/drive/folders/18I0yS486PaK5NK9r-E4_6vD5whJGTOdR?usp=drive_link"
       );
     }
   };
@@ -317,15 +325,16 @@ const Home = () => {
                   At the heart of Klabat University's Faculty of Computer
                   Science, PROXO (Project Extraordinary) returns with a renewed
                   purpose: to unite technology and collaboration in the fight
-                  against poverty. With the theme "Innovation and Collaboration:
-                  Building Resilient Communities to End Poverty," PROXO
-                  transcends competition to become a movement. It calls on
-                  visionaries, innovators, and changemakers to harness
-                  technology for good. Together, we aim to create sustainable
-                  solutions that empower communities and pave the way toward a
-                  poverty-free future. PROXO isn't just about winning—it's about
-                  making an impact. Are you ready to join this mission and
-                  create solutions that matter? PROXO awaits.
+                  against poverty. With the theme <b>"Innovation and Collaboration:
+                  Building Resilient Communities to End Poverty"</b>,
+                   PROXO transcends competition to become a movement. 
+                   It calls on visionaries, innovators, and changemakers to harness
+                   technology for good. Together, we aim to create sustainable
+                   solutions that empower communities and pave the way toward a
+                   poverty-free future. 
+                   
+                   PROXO isn't just about winning—it's about making an impact. 
+                   Are you ready to join this mission and create solutions that matter? PROXO awaits.
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -370,7 +379,7 @@ const Home = () => {
                   solutions that make a real impact.{" "}
                 </p>
                 <a
-                  href="https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                  href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
                   target="_blank"
                   className=".text-base pt-2 font-bold text-blue-700"
                 >

@@ -92,24 +92,33 @@ const Footer = () => {
             </div>
 
             <div className="text-gray-400">
-              <span>Contact WA for International participants: </span>
+              <span>WhatsApp contact for competition participation needs: </span>
               <a
-                href="https://wa.me/6289530278287"
+                href="https://wa.me/+6283197341044"
                 className="text-blue-600 hover:text-white"
                 target="_blank"
               >
-                +6289530278287
+                +6283197341044 (Admin)
               </a>
             </div>
 
             <div className="text-gray-400">
-              <span>Contact WA for Indonesian participants: </span>
+              <span>WhatsApp contact for sponsorship/partnership inquiries: </span>
+              <br></br>
               <a
-                href="https://wa.me/6281937023486"
+                href="https://wa.me/+6285757345675"
                 className="text-blue-600 hover:text-white"
                 target="_blank"
               >
-                +6281937023486
+                +6285757345675 (Aiko)
+              </a>
+              <br></br>
+              <a
+                href="https://wa.me/+6281241988202"
+                className="text-blue-600 hover:text-white"
+                target="_blank"
+              >
+                +6281241988202 (Ralf)
               </a>
             </div>
 
