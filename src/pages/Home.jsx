@@ -388,7 +388,7 @@ const Home = () => {
                   clarity, enabling you to focus on what truly matters—creating
                   solutions that make a real impact. <br></br>
                   <a
-                    href="https://www.canva.com/design/DAGbxkFbuPs/sHdrFiprJPTTzfGEkFh1gw/edit?utm_content=DAGbxkFbuPs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                    href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ"
                     target="_blank"
                     className=".text-base pt-2 font-bold text-blue-700"
                   >
