@@ -15,7 +15,6 @@ import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
 import Footer from "@/components/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
-import poster from "../assets/posterproxo.png";
 
 const Home = () => {
   //fadein animasi
