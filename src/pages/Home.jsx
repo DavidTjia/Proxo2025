@@ -9,7 +9,7 @@ import category5 from "@/assets/Business Case.svg";
 import sponsor1 from "@/assets/Corislogo.png";
 import sponsor2 from "@/assets/Edukasi.svg";
 import sponsor3 from "@/assets/Klabat.svg";
-import sponsor4 from "@/assets/infolomba.png";
+import sponsor4 from "@/assets/infolombalogo.png";
 import sponsor5 from "@/assets/search-logo.png";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
