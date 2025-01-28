@@ -307,18 +307,6 @@ const Home = () => {
             </div>
           </div>
 
-
-<<<<<<< HEAD
-          {/* <div className="mb-20 flex w-full items-center justify-center px-4">
-            <img
-              src={poster}
-              className="max-w-full object-contain md:max-w-md lg:max-w-lg xl:max-w-xl"
-              alt="Poster"
-            />
-          </div> */}
-=======
->>>>>>> 3ada0b6e24f4282cef29e3580a63ddb442e40426
-
           {/* Section What is Proxo */}
 
           <div
@@ -465,7 +453,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
 
           {/* Timeline Section */}
           <div className="min-h-screen px-4 py-4">
