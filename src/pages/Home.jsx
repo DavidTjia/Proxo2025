@@ -79,27 +79,26 @@ const Home = () => {
 
   const timelineData = [
     {
-      date: "27 January - 3 February",
-      title: "Wave 1 Early Bird Registration",
+      date: "28 January - 4 February",
+      title: "1st Wave Registration",
       content: "First wave of early bird registration period",
     },
     {
-      date: "4 February - 10 February",
-      title: "Wave 2 Early Bird Registration",
+      date: "5 February - 11 February",
+      title: "2nd Wave Registration",
       content: "Second wave of early bird registration period",
     },
     {
-      date: "11 February - 17 February",
-      title: "Normal Registration",
-      content: "Regular registration period",
+      date: "12 February - 18 February",
+      title: "Last Registration",
     },
     {
-      date: "24 February 2025",
+      date: "25 February 2025",
       title: "Proposal Submission",
-      content: "Web Development | Bionic Arm | Mobile App",
+      content: "Deadline for submitting proposals",
     },
     {
-      date: "3 March 2025",
+      date: "4 March 2025",
       title: "Proposal Selection Announcement",
       content: "Announcement of selected proposals",
     },
@@ -311,13 +310,13 @@ const Home = () => {
 
           {/* poster proxo */}
 
-          <div className="mb-20 flex w-full items-center justify-center px-4">
+          {/* <div className="mb-20 flex w-full items-center justify-center px-4">
             <img
               src={poster}
               className="max-w-full object-contain md:max-w-md lg:max-w-lg xl:max-w-xl"
               alt="Poster"
             />
-          </div>
+          </div> */}
 
           {/* Section What is Proxo */}
 
@@ -333,7 +332,7 @@ const Home = () => {
                   What is <span className="text-customGreen">proxo</span>?
                 </h2>
                 <p className="text-gray-600">
-                  At the heart of Klabat University's Faculty of Computer
+                  At the heart of Universitas Klabat Faculty of Computer
                   Science, PROXO (Project Extraordinary) returns with a renewed
                   purpose: to unite technology and collaboration in the fight
                   against poverty. With the theme "Innovation and Collaboration:
