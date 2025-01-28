@@ -92,7 +92,9 @@ const Footer = () => {
             </div>
 
             <div className="text-gray-400">
-              <span>WhatsApp contact for competition participation needs: </span>
+              <span>
+                WhatsApp contact for competition participation needs:{" "}
+              </span>
               <a
                 href="https://wa.me/+6283197341044"
                 className="text-blue-600 hover:text-white"
@@ -103,7 +105,9 @@ const Footer = () => {
             </div>
 
             <div className="text-gray-400">
-              <span>WhatsApp contact for sponsorship/partnership inquiries: </span>
+              <span>
+                WhatsApp contact for sponsorship/partnership inquiries:{" "}
+              </span>
               <br></br>
               <a
                 href="https://wa.me/+6285757345675"

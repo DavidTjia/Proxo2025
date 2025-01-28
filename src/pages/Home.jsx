@@ -13,7 +13,7 @@ import sponsor4 from "@/assets/infolomba.png";
 import sponsor5 from "@/assets/search-logo.png";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer.jsx";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -94,6 +94,7 @@ const Home = () => {
     {
       date: "25 February 2025",
       title: "Proposal Submission",
+      content: "Deadline for submitting proposals",
     },
     {
       date: "4 March 2025",
