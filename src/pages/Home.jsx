@@ -13,7 +13,7 @@ import sponsor4 from "@/assets/infolomba.png";
 import sponsor5 from "@/assets/search-logo.png";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer.jsx";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-17");
+    const targetDate = new Date("2025-02-18");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
@@ -307,8 +307,8 @@ const Home = () => {
             </div>
           </div>
 
-          {/* poster proxo */}
 
+<<<<<<< HEAD
           {/* <div className="mb-20 flex w-full items-center justify-center px-4">
             <img
               src={poster}
@@ -316,6 +316,8 @@ const Home = () => {
               alt="Poster"
             />
           </div> */}
+=======
+>>>>>>> 3ada0b6e24f4282cef29e3580a63ddb442e40426
 
           {/* Section What is Proxo */}
 
@@ -463,8 +465,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          {/* Timeline Sec
 
 
           {/* Timeline Section */}
