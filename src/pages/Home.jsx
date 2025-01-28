@@ -7,15 +7,14 @@ import category3 from "@/assets/Business Plan.svg";
 import category4 from "@/assets/Mobile dev.svg";
 import category5 from "@/assets/Business Case.svg";
 import sponsor1 from "@/assets/Corislogo.png";
-import sponsor2 from "@/assets/logoEdukasi.png";
+import sponsor2 from "@/assets/Edukasi.svg";
 import sponsor3 from "@/assets/Klabat.svg";
-import sponsor4 from "@/assets/logoinfolomba.png";
-import sponsor5 from "@/assets/SEARCHLOGO.png";
+import sponsor4 from "@/assets/infolomba.png";
+import sponsor5 from "@/assets/search-logo.png";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
 import Footer from "@/components/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
-import poster from "../assets/flyerigs.png";
 
 const Home = () => {
   //fadein animasi
@@ -31,7 +30,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-17");
+    const targetDate = new Date("2025-02-18");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
@@ -51,7 +50,7 @@ const Home = () => {
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
     { id: 3, name: "Sponsor 3", logo: sponsor3 },
     { id: 4, name: "Sponsor 4", logo: sponsor4 },
-    { id: 5, name: "Sponsor 5", logo: sponsor5 }
+    { id: 5, name: "Sponsor 5", logo: sponsor5 },
   ];
 
   const carouselData = [
@@ -79,27 +78,25 @@ const Home = () => {
 
   const timelineData = [
     {
-      date: "27 January - 3 February",
-      title: "1st Wave - Early Bird Registration",
+      date: "28 January - 4 February",
+      title: "1st Wave Registration",
       content: "First wave of early bird registration period",
     },
     {
-      date: "4 February - 10 February",
-      title: "2nd Wave - Early Bird Registration",
+      date: "5 February - 11 February",
+      title: "2nd Wave Registration",
       content: "Second wave of early bird registration period",
     },
     {
-      date: "11 February - 17 February",
+      date: "12 February - 18 February",
       title: "Last Registration",
-      content: "Regular registration period",
     },
     {
-      date: "24 February 2025",
+      date: "25 February 2025",
       title: "Proposal Submission",
-      content: "Deadline to Submit Your Proposals",
     },
     {
-      date: "3 March 2025",
+      date: "4 March 2025",
       title: "Proposal Selection Announcement",
       content: "Announcement of selected proposals",
     },
@@ -149,19 +146,26 @@ const Home = () => {
       title === "Mobile Development" ||
       title === "Business Case"
     ) {
-      window.open(
-        "https://drive.google.com/drive/folders/18cmegs5pVEKpvxpoW6sBcRQ8r7TZDJcF?usp=sharing",
-        "https://drive.google.com/drive/folders/18ezmrilvhoSw7boc_5U1cTgKBuZpdBGI?usp=drive_link",
-        "https://drive.google.com/drive/folders/18ezmrilvhoSw7boc_5U1cTgKBuZpdBGI?usp=drive_link",
-        "https://drive.google.com/drive/folders/18IqZliz2rXplcRSxxxVXFa6VYUmPLJch?usp=drive_link",
-        "https://drive.google.com/drive/folders/18_GCx7i-A-Zb66e_IdDinYM4X2bK1Djy?usp=drive_link",
-        "https://drive.google.com/drive/folders/18I0yS486PaK5NK9r-E4_6vD5whJGTOdR?usp=drive_link"
-      );
-    }
-  };
+      const driveLinks = {
+        "Short Movies":
+          "https://drive.google.com/drive/folders/18cmegs5pVEKpvxpoW6sBcRQ8r7TZDJcF",
+        "Web Development":
+          "https://drive.google.com/drive/folders/18ezmrilvhoSw7boc_5U1cTgKBuZpdBGI",
+        "Business Plan":
+          "https://drive.google.com/drive/folders/18IqZliz2rXplcRSxxxVXFa6VYUmPLJch",
+        "Mobile Development":
+          "https://drive.google.com/drive/folders/18_GCx7i-A-Zb66e_IdDinYM4X2bK1Djy",
+        "Business Case":
+          "https://drive.google.com/drive/folders/18I0yS486PaK5NK9r-E4_6vD5whJGTOdR",
+      };
 
-  const handleBack = () => {
-    carouselRef.current.classList.remove("showDetail");
+      const link = driveLinks[title];
+      if (link) {
+        window.open(link, "_blank");
+      } else {
+        console.log(`No drive link found for ${title}`);
+      }
+    }
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -302,11 +306,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* poster proxo */}
 
-          <div>
-            <img src={poster} className="mb-20 scale-90" />
-          </div>
 
           {/* Section What is Proxo */}
 
@@ -322,19 +322,18 @@ const Home = () => {
                   What is <span className="text-customGreen">proxo</span>?
                 </h2>
                 <p className="text-gray-600">
-                  At the heart of Klabat University's Faculty of Computer
+                  At the heart of Universitas Klabat Faculty of Computer
                   Science, PROXO (Project Extraordinary) returns with a renewed
                   purpose: to unite technology and collaboration in the fight
-                  against poverty. With the theme <b>"Innovation and Collaboration:
-                  Building Resilient Communities to End Poverty"</b>,
-                   PROXO transcends competition to become a movement. 
-                   It calls on visionaries, innovators, and changemakers to harness
-                   technology for good. Together, we aim to create sustainable
-                   solutions that empower communities and pave the way toward a
-                   poverty-free future. 
-                   
-                   PROXO isn't just about winning—it's about making an impact. 
-                   Are you ready to join this mission and create solutions that matter? PROXO awaits.
+                  against poverty. With the theme "Innovation and Collaboration:
+                  Building Resilient Communities to End Poverty," PROXO
+                  transcends competition to become a movement. It calls on
+                  visionaries, innovators, and changemakers to harness
+                  technology for good. Together, we aim to create sustainable
+                  solutions that empower communities and pave the way toward a
+                  poverty-free future. PROXO isn't just about winning—it's about
+                  making an impact. Are you ready to join this mission and
+                  create solutions that matter? PROXO awaits.
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -376,15 +375,15 @@ const Home = () => {
                   first-time participant or a returning innovator, these
                   guidelines will empower you to navigate the process with
                   clarity, enabling you to focus on what truly matters—creating
-                  solutions that make a real impact.{" "}
+                  solutions that make a real impact. <br></br>
+                  <a
+                    href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ"
+                    target="_blank"
+                    className=".text-base pt-2 font-bold text-blue-700"
+                  >
+                    ➡ Explore Guidelines
+                  </a>
                 </p>
-                <a
-                  href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
-                  target="_blank"
-                  className=".text-base pt-2 font-bold text-blue-700"
-                >
-                  ➡ Explore Guidelines
-                </a>
               </div>
             </div>
           </div>
@@ -456,17 +455,18 @@ const Home = () => {
             </div>
           </div>
 
+
           {/* Timeline Section */}
-          <div className="min-h-screen px-4">
+          <div className="min-h-screen px-4 py-4">
             <div className="mx-auto max-w-5xl">
-              <h1 className="mb-16 text-center text-3xl font-bold text-blue-800 md:text-4xl">
+              <h1 className="mb-16 text-center text-3xl font-bold text-purple-800 md:text-4xl">
                 Event Timeline
               </h1>
 
               <div className="relative">
                 <div className="absolute left-4 h-full w-0.5 transform bg-gray-200 md:left-1/2 md:-translate-x-1/2">
                   <div
-                    className="absolute top-0 w-full bg-blue-500 transition-all duration-700 ease-in-out"
+                    className="absolute top-0 w-full bg-purple-500 transition-all duration-700 ease-in-out"
                     style={{
                       height: `${activeIndex !== null ? (activeIndex + 1) * (100 / timelineData.length) : 0}%`,
                       opacity: 0.6,
@@ -488,7 +488,7 @@ const Home = () => {
                         <div
                           className={`relative rounded-xl border border-gray-100 bg-white p-6 shadow-lg ${index % 2 === 0 ? "md:text-right" : "md:text-left"} transition-all duration-700 ease-out ${activeIndex >= index ? "translate-y-0 scale-100 opacity-100" : "-translate-y-4 scale-95 opacity-0"}`}
                         >
-                          <div className="mb-2 text-sm font-semibold text-blue-600">
+                          <div className="mb-2 text-sm font-semibold text-purple-600">
                             {item.date}
                           </div>
                           <h3 className="mb-3 text-xl font-bold text-gray-800">
@@ -499,7 +499,7 @@ const Home = () => {
                           <div
                             className={`absolute left-0 top-6 -translate-x-[2.2rem] transform transition-all duration-500 ease-out md:hidden ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           >
-                            <div className="h-4 w-4 rounded-full border-4 border-white bg-blue-500 shadow-md" />
+                            <div className="h-4 w-4 rounded-full border-4 border-white bg-purple-500 shadow-md" />
                           </div>
                         </div>
                       </div>
@@ -507,7 +507,7 @@ const Home = () => {
                       <div className="relative hidden justify-center md:flex md:w-2/12">
                         <div className="absolute top-1/2 h-5 w-5 -translate-y-1/2 transform">
                           <div
-                            className={`h-full w-full rounded-full border-4 border-white bg-blue-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                            className={`h-full w-full rounded-full border-4 border-black bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           />
                         </div>
                       </div>
@@ -527,7 +527,7 @@ const Home = () => {
             }`}
           >
             <div className="container mx-auto px-4 py-8">
-              <h2 className="mb-8 text-center text-4xl font-bold text-gray-800">
+              <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
                 Our Partnership
               </h2>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
@@ -536,11 +536,7 @@ const Home = () => {
                     key={sponsor.id}
                     className="items-centerrounded-lg flex p-4 duration-300 hover:shadow-md"
                   >
-                    <img
-                      src={sponsor.logo}
-                      alt={`${sponsor.name} logo`}
-                      className="w-23 h-full"
-                    />
+                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
                   </div>
                 ))}
               </div>
