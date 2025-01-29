@@ -7,10 +7,7 @@ import category3 from "@/assets/Business Plan.svg";
 import category4 from "@/assets/Mobile dev.svg";
 import category5 from "@/assets/Business Case.svg";
 import sponsor1 from "@/assets/Corislogo.png";
-import sponsor2 from "@/assets/Edukasi.svg";
-import sponsor3 from "@/assets/Klabat.svg";
-import sponsor4 from "@/assets/infolomba.png";
-import sponsor5 from "@/assets/search-logo.png";
+import sponsor2 from "@/assets/Klabat.svg";
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
 import Footer from "@/components/Footer.jsx";
@@ -30,7 +27,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-18");
+    const targetDate = new Date("2025-02-19");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
@@ -42,15 +39,12 @@ const Home = () => {
   };
 
   const openGmail = () => {
-    window.location.href = "mailto:ProxoCoris.unklab@gmail.com";
+    window.location.href = "mailto:proxocoris.unklab@gmail.com";
   };
 
   const sponsors = [
     { id: 1, name: "Sponsor 1", logo: sponsor1 },
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
-    { id: 3, name: "Sponsor 3", logo: sponsor3 },
-    { id: 4, name: "Sponsor 4", logo: sponsor4 },
-    { id: 5, name: "Sponsor 5", logo: sponsor5 },
   ];
 
   const carouselData = [
@@ -78,26 +72,26 @@ const Home = () => {
 
   const timelineData = [
     {
-      date: "28 January - 4 February",
+      date: "29 January - 5 February",
       title: "1st Wave Registration",
       content: "First wave of early bird registration period",
     },
     {
-      date: "5 February - 11 February",
+      date: "6 February - 12 February",
       title: "2nd Wave Registration",
       content: "Second wave of early bird registration period",
     },
     {
-      date: "12 February - 18 February",
+      date: "13 February - 19 February",
       title: "Last Registration",
     },
     {
-      date: "25 February 2025",
+      date: "24 February 2025",
       title: "Proposal Submission",
       content: "Deadline for submitting proposals",
     },
     {
-      date: "4 March 2025",
+      date: "5 March 2025",
       title: "Proposal Selection Announcement",
       content: "Announcement of selected proposals",
     },
@@ -409,7 +403,7 @@ const Home = () => {
                         className="seeMore"
                         onClick={() => handleSeeMore(item.topic)}
                       >
-                        SEE MORE &#8599;
+                        DOWNLOAD GUIDELINE BOOK &#8599;
                       </button>
                     </div>
                     {/* <div className="detail">
@@ -529,7 +523,7 @@ const Home = () => {
           >
             <div className="container mx-auto px-4 py-8">
               <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
-                Our Partnership
+                Our Sponsorship
               </h2>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
                 {sponsors.map((sponsor) => (
