@@ -137,27 +137,26 @@ const Home = () => {
 
   const timelineData = [
     {
-      date: "27 January - 3 February",
-      title: "Wave 1 Early Bird Registration",
+      date: "29 January - 5 February",
+      title: "1st Wave Registration",
       content: "First wave of early bird registration period",
     },
     {
-      date: "4 February - 10 February",
-      title: "Wave 2 Early Bird Registration",
+      date: "6 February - 12 February",
+      title: "2nd Wave Registration",
       content: "Second wave of early bird registration period",
     },
     {
-      date: "11 February - 17 February",
-      title: "Normal Registration",
-      content: "Regular registration period",
+      date: "13 February - 19 February",
+      title: "Last Registration",
     },
     {
       date: "24 February 2025",
       title: "Proposal Submission",
-      content: "Web Development | Bionic Arm | Mobile App",
+      content: "Deadline for submitting proposals",
     },
     {
-      date: "3 March 2025",
+      date: "5 March 2025",
       title: "Proposal Selection Announcement",
       content: "Announcement of selected proposals",
     },
