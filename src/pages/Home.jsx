@@ -13,7 +13,7 @@ import sponsor2 from "@/assets/Klabat.svg";
 import AMIKOM_Purwokerto from "@/assets/amikom_purwokerto.png";
 import AMIKOM_Yogyakarta from "@/assets/amikom_yogyakarta.png";
 import AMIKOM_Solo from "@/assets/amikom_solo.png";
-import Binus_university from "@/assets/Binus_university.png";
+import Binus_university from "@/assets/binus_university.png";
 import Institut_Teknologi_Bisnis_PalComTech from "@/assets/PalComTech.jpg";
 import ISB_Atmaluhur from "@/assets/atmaluhur.png";
 import Institut_Informatika_Bisnis_Darmajaya from "@/assets/darmajaya.png";
