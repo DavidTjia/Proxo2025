@@ -24,7 +24,7 @@ import STMIK_Profesional from "@/assets/Stmik_profesional.png";
 import STMIK_Adiguna_Palu from "@/assets/Stmik_Adiguna_palu.png";
 import STMIK_Sepuluh_November from "@/assets/Stimik_sepuluh_november.jpg";
 import STMIK_Pontianak from "@/assets/Pontianak.png";
-import STTB_Bandung from "@/assets/";
+import STTB_Bandung from "@/assets/Sttb_bandung.png";
 import UDINUS_Semarang from "@/assets/udinus.png";
 import Universitas_Bumigora from "@/assets/bumigora.png";
 import Universitas_Dipa_Makassar from "@/assets/Universitas_dipa_makassar.png";
