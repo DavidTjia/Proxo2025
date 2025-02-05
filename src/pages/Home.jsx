@@ -24,7 +24,7 @@ import STMIK_Profesional from "@/assets/Stmik_profesional.png";
 import STMIK_Adiguna_Palu from "@/assets/Stmik_Adiguna_palu.png";
 import STMIK_Sepuluh_November from "@/assets/Stimik_sepuluh_november.jpg";
 import STMIK_Pontianak from "@/assets/Pontianak.png";
-import STTB_Bandung from "@/assets/Sttb_bandung.png";
+import STTB_Bandung from "@/assets/";
 import UDINUS_Semarang from "@/assets/udinus.png";
 import Universitas_Bumigora from "@/assets/bumigora.png";
 import Universitas_Dipa_Makassar from "@/assets/Universitas_dipa_makassar.png";
@@ -53,7 +53,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-17");
+    const targetDate = new Date("2025-02-19");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
@@ -367,16 +367,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* poster proxo */}
-
-          <div className="mb-20 flex w-full items-center justify-center px-4">
-            <img
-              src={poster}
-              className="max-w-full object-contain md:max-w-md lg:max-w-lg xl:max-w-xl"
-              alt="Poster"
-            />
-          </div>
-
           {/* Section What is Proxo */}
 
           <div
@@ -448,9 +438,9 @@ const Home = () => {
                   <a
                     href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
                     target="_blank"
-                    className="text-bold text-blue-600"
+                    className="pt-2 text-base font-bold text-blue-700"
                   >
-                    Explore Guidelines
+                    ➡ Explore Guidelines
                   </a>
                 </p>
               </div>
@@ -477,7 +467,7 @@ const Home = () => {
                         className="seeMore"
                         onClick={() => handleSeeMore(item.topic)}
                       >
-                        SEE MORE &#8599;
+                        DOWNLOAD GUIDELINE BOOK &#8599;
                       </button>
                     </div>
                     {/* <div className="detail">
@@ -567,7 +557,7 @@ const Home = () => {
                           <div
                             className={`absolute left-0 top-6 -translate-x-[2.2rem] transform transition-all duration-500 ease-out md:hidden ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           >
-                            <div className="h-4 w-4 rounded-full bg-purple-500 shadow-md" />
+                            <div className="h-4 w-4 rounded-full border-4 border-white bg-purple-500 shadow-md" />
                           </div>
                         </div>
                       </div>
@@ -575,7 +565,7 @@ const Home = () => {
                       <div className="relative hidden justify-center md:flex md:w-2/12">
                         <div className="absolute top-1/2 h-5 w-5 -translate-y-1/2 transform">
                           <div
-                            className={`h-full w-full rounded-full bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                            className={`h-full w-full rounded-full border-4 border-black bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           />
                         </div>
                       </div>
