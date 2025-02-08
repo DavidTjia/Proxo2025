@@ -380,7 +380,7 @@ const Home = () => {
                   What is <span className="text-customGreen">proxo</span>?
                 </h2>
                 <p className="text-gray-600">
-                  At the heart of Klabat University's Faculty of Computer
+                  At the heart of Universitas Klabat Faculty of Computer
                   Science, PROXO (Project Extraordinary) returns with a renewed
                   purpose: to unite technology and collaboration in the fight
                   against poverty. With the theme "Innovation and Collaboration:
