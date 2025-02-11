@@ -425,23 +425,28 @@ const Home = () => {
                   Guideline
                 </h2>
                 <p className="text-gray-600">
-                  To ensure a smooth journey through our process, we’ve designed
+                  To ensure a smooth journey through our process, we've designed
                   a set of clear, easy-to-follow guidelines that will help you
                   understand every step. Our aim is to provide you with all the
                   necessary information, ensuring that you can confidently move
-                  forward and contribute to the mission. Whether you’re a
+                  forward and contribute to the mission. Whether you're a
                   first-time participant or a returning innovator, these
                   guidelines will empower you to navigate the process with
                   clarity, enabling you to focus on what truly matters—creating
-                  solutions that make a real impact. <br></br>
-                  <a
-                    href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
-                    target="_blank"
-                    className="pt-2 text-base font-bold text-blue-700"
-                  >
-                    ➡ Explore Guidelines
-                  </a>
+                  solutions that make a real impact.
                 </p>
+                <a
+                  href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
+                  target="_blank"
+                  className="group relative mt-6 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-pink-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 group-hover:from-purple-600 group-hover:to-pink-500 dark:text-white dark:focus:ring-purple-800"
+                >
+                  <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+                    Explore Guidelines
+                    <span className="ml-2 inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -556,7 +561,7 @@ const Home = () => {
                           <div
                             className={`absolute left-0 top-6 -translate-x-[2.2rem] transform transition-all duration-500 ease-out md:hidden ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           >
-                            <div className="h-4 w-4 rounded-full border-4 border-white bg-purple-500 shadow-md" />
+                            <div className="h-4 w-4 rounded-full bg-purple-500 shadow-md" />
                           </div>
                         </div>
                       </div>
@@ -564,7 +569,7 @@ const Home = () => {
                       <div className="relative hidden justify-center md:flex md:w-2/12">
                         <div className="absolute top-1/2 h-5 w-5 -translate-y-1/2 transform">
                           <div
-                            className={`h-full w-full rounded-full border-4 border-black bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                            className={`h-full w-full rounded-full bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           />
                         </div>
                       </div>
@@ -626,7 +631,7 @@ const Home = () => {
             </div>
           </div>
           {/*Email section*/}
-          <div
+          {/* <div
             ref={ref4}
             className={`mb-32 transform transition-all duration-700 ease-in-out ${
               isVisible4 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
@@ -662,7 +667,7 @@ const Home = () => {
                 Contact Us via Email
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

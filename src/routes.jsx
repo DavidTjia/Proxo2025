@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Layout from "./Layout";
 import Winner from "./pages/Winner";
 import WhatsNew from "./pages/WhatsNew";
+import Sponsor from "./pages/Sponsor";
 // import Winner from "./pages/Winner";
 // import Guidelines from "./pages/Guidelines";
 // import Competition from "./pages/Competition";
@@ -23,6 +24,7 @@ const routerList = createBrowserRouter([
       { path: "home", element: <Home /> },
       { path: "winner", element: <Winner /> },
       { path: "whatsnew", element: <WhatsNew /> },
+      { path: "sponsor", element: <Sponsor /> },
     ],
   },
 ]);
