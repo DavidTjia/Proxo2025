@@ -106,9 +106,7 @@ const Sponsor = () => {
             Ready to Join?
           </h2>
           <p className="mb-8 text-lg text-gray-600">
-            Take the first step towards participating in PROXOCORIS
-            International Competition. Contact us through email for registration
-            and inquiries.
+            Become a valued sponsor of the PROXOCORIS International Competition
           </p>
           <button
             onClick={openGmail}
