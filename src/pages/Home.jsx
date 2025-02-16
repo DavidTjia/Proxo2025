@@ -9,7 +9,9 @@ import category5 from "@/assets/Business Case.svg";
 
 import sponsor1 from "@/assets/coris.png";
 import sponsor2 from "@/assets/Klabat.svg";
+import sponsor3 from "@/assets/coding.png";
 
+import adkonveksi from "@/assets/adkonveksi.png";
 import AMIKOM_Purwokerto from "@/assets/amikom_purwokerto.png";
 import AMIKOM_Yogyakarta from "@/assets/amikom_yogyakarta.png";
 import AMIKOM_Solo from "@/assets/amikom_solo.png";
@@ -71,6 +73,7 @@ const Home = () => {
   const sponsors = [
     { id: 1, name: "Sponsor 1", logo: sponsor1 },
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
+    { id: 3, name: "Sponsor 3", logo: sponsor3 },
   ];
   const partnerships = [
     { id: 1, name: "AMIKOM Purwokerto", logo: AMIKOM_Purwokerto },
@@ -110,6 +113,7 @@ const Home = () => {
       logo: Universitas_Potensi_Utama,
     },
     { id: 21, name: "Universitas Raharja", logo: Universitas_Raharja },
+    { id: 22, name: "adkonveksi", logo: adkonveksi },
   ];
 
   const carouselData = [
@@ -598,7 +602,11 @@ const Home = () => {
                     key={sponsor.id}
                     className="items-centerrounded-lg flex p-4 hover:shadow-md"
                   >
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
+                    <img
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} logo`}
+                      className="h-30 w-auto object-contain"
+                    />
                   </div>
                 ))}
               </div>
@@ -624,6 +632,7 @@ const Home = () => {
                     <img
                       src={partenership.logo}
                       alt={`${partenership.name} logo`}
+                      className="h-30 w-auto object-contain"
                     />
                   </div>
                 ))}
