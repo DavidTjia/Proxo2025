@@ -44,9 +44,9 @@ const Sponsor = () => {
 
   const pdfUrls = {
     "English version":
-      "https://drive.google.com/file/d/1wwYwhbrh23sD5TtOMnLYlYRchKpOY7ji/view?usp=sharing ",
+      "https://drive.google.com/file/d/18y-fmTugU-_apj0n8wuOJ3XG0BbwNQJ-/view?usp=sharing  ",
     "Indonesia version":
-      "https://drive.google.com/file/d/1m8DUYh76v6Aec2J_n37W9ZUI7pDtOUUt/view?usp=sharing ",
+      "https://drive.google.com/file/d/1ZNO0sCbOhi7nWkNs2Dm8PWKogQ0cw6_7/view?usp=sharing ",
   };
 
   const getPdfViewerUrl = () => {
