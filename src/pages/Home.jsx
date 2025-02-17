@@ -55,7 +55,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-19");
+    const targetDate = new Date("2025-03-07");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
@@ -151,16 +151,16 @@ const Home = () => {
       content: "Second wave of early bird registration period",
     },
     {
-      date: "13 February - 19 February",
+      date: "13 February - 7 March",
       title: "Last Registration",
     },
     {
-      date: "24 February 2025",
+      date: "10 March - 14 March",
       title: "Proposal Submission",
       content: "Deadline for submitting proposals",
     },
     {
-      date: "5 March 2025",
+      date: "14 March 2025",
       title: "Proposal Selection Announcement",
       content: "Announcement of selected proposals",
     },
@@ -298,6 +298,15 @@ const Home = () => {
         <div className="blur-7xl absolute -left-48 h-96 w-96 rounded-full bg-purple-100"></div>
         <div className="blur-7xl absolute -right-48 bottom-14 h-96 w-96 rounded-full bg-purple-100"></div>
       </div>
+
+      <marquee
+        behavior="scroll"
+        direction="left"
+        scrollAmount="7"
+        className="pt-6"
+      >
+        🚀 GREAT NEWS! PROXO EXTENDED UNTIL 7 MARCH! 🔥 Don't Miss Out! 🔥
+      </marquee>
 
       {/* Main content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-10">
