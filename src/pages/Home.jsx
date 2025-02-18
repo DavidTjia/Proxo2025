@@ -55,7 +55,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-03-07");
+    const targetDate = new Date("2025-02-19");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
