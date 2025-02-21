@@ -55,7 +55,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="submenu hidden items-center space-x-6 md:flex">
-            <NavItem text="Home" to="/home" />
+            <NavItem text="Home" to="/" />
             <NavItem
               text="Registration"
               to="https://bit.ly/ProxoCoris2025 "
@@ -107,7 +107,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="mt-4 space-y-2 bg-white p-4 shadow-lg md:hidden">
-            <NavItem text="Home" to="/home" />
+            <NavItem text="Home" to="/" />
             <NavItem
               text="Registration"
               to="https://bit.ly/ProxoCoris2025 "
