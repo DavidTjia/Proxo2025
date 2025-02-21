@@ -9,5 +9,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/", // Menentukan base path agar routing berfungsi dengan baik di Vercel
+  base: "/", // Menentukan base path agar Vite dan React Router bekerja di Vercel
 });
