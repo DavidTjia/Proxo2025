@@ -6,12 +6,39 @@ import category2 from "@/assets/Web dev.svg";
 import category3 from "@/assets/Business Plan.svg";
 import category4 from "@/assets/Mobile dev.svg";
 import category5 from "@/assets/Business Case.svg";
-import sponsor1 from "@/assets/Corislogo.png";
+
+import sponsor1 from "@/assets/coris.png";
 import sponsor2 from "@/assets/Klabat.svg";
+import sponsor3 from "@/assets/coding.png";
+
+import adkonveksi from "@/assets/adkonveksi.png";
+import AMIKOM_Purwokerto from "@/assets/amikom_purwokerto.png";
+import AMIKOM_Yogyakarta from "@/assets/amikom_yogyakarta.png";
+import AMIKOM_Solo from "@/assets/amikom_solo.png";
+import Binus_university from "@/assets/binus_university.png";
+import Institut_Teknologi_Bisnis_PalComTech from "@/assets/PalComTech.jpg";
+import ISB_Atmaluhur from "@/assets/atmaluhur.png";
+import Institut_Informatika_Bisnis_Darmajaya from "@/assets/darmajaya.png";
+import STMIK_PPKIA from "@/assets/Stmik_PPKIA.png";
+import STIKOM_Bali from "@/assets/Stikom_bali.png";
+import STIKOM_PGRI_Banyuwangi from "@/assets/banyuwangi.png";
+import STMIK_Profesional from "@/assets/Stmik_profesional.png";
+import STMIK_Adiguna_Palu from "@/assets/Stmik_Adiguna_palu.png";
+import STMIK_Sepuluh_November from "@/assets/Stimik_sepuluh_november.jpg";
+import STMIK_Pontianak from "@/assets/Pontianak.png";
+import STTB_Bandung from "@/assets/Sttb_bandung.png";
+import UDINUS_Semarang from "@/assets/udinus.png";
+import Universitas_Bumigora from "@/assets/bumigora.png";
+import Universitas_Dipa_Makassar from "@/assets/Universitas_dipa_makassar.png";
+import Universitas_Klabat from "@/assets/Universitas_klabat.png";
+import Universitas_Potensi_Utama from "@/assets/Universitas_potensi_utama.png";
+import Universitas_Raharja from "@/assets/Universitas_raharja.png";
+
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
-import Footer from "@/components/Footer.jsx";
+import Footer from "@/components/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
+import poster from "../assets/poster.png";
 
 const Home = () => {
   //fadein animasi
@@ -20,6 +47,7 @@ const Home = () => {
   const [ref3, isVisible3] = useIntersectionObserver();
   const [ref4, isVisible4] = useIntersectionObserver();
   const [ref5, isVisible5] = useIntersectionObserver();
+  const [ref6, isVisible6] = useIntersectionObserver();
 
   const navigate = useNavigate();
 
@@ -27,7 +55,7 @@ const Home = () => {
   const listRef = useRef(null);
   const [isClickable, setIsClickable] = useState(true);
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-19");
+    const targetDate = new Date("2025-03-07");
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
     return {
@@ -39,12 +67,53 @@ const Home = () => {
   };
 
   const openGmail = () => {
-    window.location.href = "mailto:proxocoris.unklab@gmail.com";
+    window.location.href = "mailto:ProxoCoris.unklab@gmail.com";
   };
 
   const sponsors = [
     { id: 1, name: "Sponsor 1", logo: sponsor1 },
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
+    { id: 3, name: "Sponsor 3", logo: sponsor3 },
+  ];
+  const partnerships = [
+    { id: 1, name: "AMIKOM Purwokerto", logo: AMIKOM_Purwokerto },
+    { id: 2, name: "AMIKOM Yogyakarta", logo: AMIKOM_Yogyakarta },
+    { id: 3, name: "AMIKOM Solo", logo: AMIKOM_Solo },
+    { id: 4, name: "Binus University", logo: Binus_university },
+    { id: 5, name: "ISB Atmaluhur", logo: ISB_Atmaluhur },
+    {
+      id: 6,
+      name: "Institut Teknologi dan Bisnis PalComTech",
+      logo: Institut_Teknologi_Bisnis_PalComTech,
+    },
+    {
+      id: 7,
+      name: "Institut Informatika dan Bisnis Darmajaya",
+      logo: Institut_Informatika_Bisnis_Darmajaya,
+    },
+    { id: 8, name: "STMIK PPKIA", logo: STMIK_PPKIA },
+    { id: 9, name: "STIKOM Bali", logo: STIKOM_Bali },
+    { id: 10, name: "STIKOM PGRI Banyuwangi", logo: STIKOM_PGRI_Banyuwangi },
+    { id: 11, name: "STMIK Profesional", logo: STMIK_Profesional },
+    { id: 12, name: "STMIK Adiguna Palu", logo: STMIK_Adiguna_Palu },
+    { id: 13, name: "STMIK Sepuluh November", logo: STMIK_Sepuluh_November },
+    { id: 14, name: "STMIK Pontianak", logo: STMIK_Pontianak },
+    { id: 15, name: "STTB Bandung", logo: STTB_Bandung },
+    { id: 16, name: "UDINUS Semarang", logo: UDINUS_Semarang },
+    { id: 17, name: "Universitas Bumigora", logo: Universitas_Bumigora },
+    {
+      id: 18,
+      name: "Universitas Dipa Makassar",
+      logo: Universitas_Dipa_Makassar,
+    },
+    { id: 19, name: "Universitas Klabat", logo: Universitas_Klabat },
+    {
+      id: 20,
+      name: "Universitas Potensi Utama",
+      logo: Universitas_Potensi_Utama,
+    },
+    { id: 21, name: "Universitas Raharja", logo: Universitas_Raharja },
+    { id: 22, name: "adkonveksi", logo: adkonveksi },
   ];
 
   const carouselData = [
@@ -82,16 +151,16 @@ const Home = () => {
       content: "Second wave of early bird registration period",
     },
     {
-      date: "13 February - 19 February",
+      date: "13 February - 7 March",
       title: "Last Registration",
     },
     {
-      date: "24 February 2025",
+      date: "10 March - 14 March",
       title: "Proposal Submission",
       content: "Deadline for submitting proposals",
     },
     {
-      date: "5 March 2025",
+      date: "14 March 2025",
       title: "Proposal Selection Announcement",
       content: "Announcement of selected proposals",
     },
@@ -230,6 +299,15 @@ const Home = () => {
         <div className="blur-7xl absolute -right-48 bottom-14 h-96 w-96 rounded-full bg-purple-100"></div>
       </div>
 
+      <marquee
+        behavior="scroll"
+        direction="left"
+        scrollAmount="7"
+        className="pt-6"
+      >
+        🚀 GREAT NEWS! PROXO EXTENDED UNTIL 7 MARCH! 🔥 Don't Miss Out! 🔥
+      </marquee>
+
       {/* Main content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-10">
         {/* Hero Section */}
@@ -301,8 +379,6 @@ const Home = () => {
             </div>
           </div>
 
-
-
           {/* Section What is Proxo */}
 
           <div
@@ -317,18 +393,41 @@ const Home = () => {
                   What is <span className="text-customGreen">proxo</span>?
                 </h2>
                 <p className="text-gray-600">
-                  At the heart of Universitas Klabat Faculty of Computer
-                  Science, PROXO (Project Extraordinary) returns with a renewed
-                  purpose: to unite technology and collaboration in the fight
-                  against poverty. With the theme "Innovation and Collaboration:
-                  Building Resilient Communities to End Poverty," PROXO
-                  transcends competition to become a movement. It calls on
-                  visionaries, innovators, and changemakers to harness
-                  technology for good. Together, we aim to create sustainable
-                  solutions that empower communities and pave the way toward a
-                  poverty-free future. PROXO isn't just about winning—it's about
-                  making an impact. Are you ready to join this mission and
-                  create solutions that matter? PROXO awaits.
+                  At the heart of Universitas Klabat's Faculty of Computer
+                  Science,
+                  <b> PROXO (Project Extraordinary) </b> is more than just an
+                  event—it’s a movement.
+                  <br />
+                  <br />
+                  With the theme{" "}
+                  <b>
+                    "Innovation and Collaboration: Building Resilient
+                    Communities to End Poverty,"
+                  </b>
+                  PROXO unites innovators and changemakers to harness technology
+                  for sustainable community solutions. It’s not just a
+                  competition; it’s real action.
+                  <br />
+                  <br />
+                  Meanwhile,{" "}
+                  <b> CORIS (Cooperation Research Inter University) </b>
+                  serves as a global platform for academic collaboration in{" "}
+                  <b>Technology and Communication (ICT)</b>.
+                  <br />
+                  As an open-access international journal, CORIS publishes
+                  cutting-edge research that bridges theory, experimentation,
+                  and numerical analysis—driving real-world impact.
+                  <br />
+                  <br />
+                  By merging <b> PROXO’s hands-on innovation </b> with{" "}
+                  <b> CORIS’s academic excellence </b>, we create a powerful
+                  synergy—where technology and research come together to combat
+                  poverty.
+                  <br />
+                  <br />
+                  <b>Be part of this movement.</b>
+                  Together, we can drive real change through technology,
+                  research, and innovation.
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -362,23 +461,28 @@ const Home = () => {
                   Guideline
                 </h2>
                 <p className="text-gray-600">
-                  To ensure a smooth journey through our process, we’ve designed
+                  To ensure a smooth journey through our process, we've designed
                   a set of clear, easy-to-follow guidelines that will help you
                   understand every step. Our aim is to provide you with all the
                   necessary information, ensuring that you can confidently move
-                  forward and contribute to the mission. Whether you’re a
+                  forward and contribute to the mission. Whether you're a
                   first-time participant or a returning innovator, these
                   guidelines will empower you to navigate the process with
                   clarity, enabling you to focus on what truly matters—creating
-                  solutions that make a real impact. <br></br>
-                  <a
-                    href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ"
-                    target="_blank"
-                    className=".text-base pt-2 font-bold text-blue-700"
-                  >
-                    ➡ Explore Guidelines
-                  </a>
+                  solutions that make a real impact.
                 </p>
+                <a
+                  href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
+                  target="_blank"
+                  className="group relative mt-6 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-pink-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 group-hover:from-purple-600 group-hover:to-pink-500 dark:text-white dark:focus:ring-purple-800"
+                >
+                  <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+                    Explore Guidelines
+                    <span className="ml-2 inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -450,7 +554,6 @@ const Home = () => {
             </div>
           </div>
 
-
           {/* Timeline Section */}
           <div className="min-h-screen px-4 py-4">
             <div className="mx-auto max-w-5xl">
@@ -494,7 +597,7 @@ const Home = () => {
                           <div
                             className={`absolute left-0 top-6 -translate-x-[2.2rem] transform transition-all duration-500 ease-out md:hidden ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           >
-                            <div className="h-4 w-4 rounded-full border-4 border-white bg-purple-500 shadow-md" />
+                            <div className="h-4 w-4 rounded-full bg-purple-500 shadow-md" />
                           </div>
                         </div>
                       </div>
@@ -502,7 +605,7 @@ const Home = () => {
                       <div className="relative hidden justify-center md:flex md:w-2/12">
                         <div className="absolute top-1/2 h-5 w-5 -translate-y-1/2 transform">
                           <div
-                            className={`h-full w-full rounded-full border-4 border-black bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+                            className={`h-full w-full rounded-full bg-purple-500 shadow-md transition-all duration-500 ease-out ${activeIndex >= index ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
                           />
                         </div>
                       </div>
@@ -529,16 +632,47 @@ const Home = () => {
                 {sponsors.map((sponsor) => (
                   <div
                     key={sponsor.id}
-                    className="items-centerrounded-lg flex p-4 duration-300 hover:shadow-md"
+                    className="items-centerrounded-lg flex p-4 hover:shadow-md"
                   >
-                    <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
+                    <img
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} logo`}
+                      className="h-30 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/*Partnership section*/}
+          <div
+            ref={ref6}
+            className={`mb-32 transform transition-all duration-700 ease-in-out ${
+              isVisible6 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
+            }`}
+          >
+            <div className="container mx-auto px-4 py-8">
+              <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
+                Our Partnership
+              </h2>
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6">
+                {partnerships.map((partenership) => (
+                  <div
+                    key={partenership.id}
+                    className="items-centerrounded-lg flex p-4 hover:shadow-md"
+                  >
+                    <img
+                      src={partenership.logo}
+                      alt={`${partenership.name} logo`}
+                      className="h-30 w-auto object-contain"
+                    />
                   </div>
                 ))}
               </div>
             </div>
           </div>
           {/*Email section*/}
-          <div
+          {/* <div
             ref={ref4}
             className={`mb-32 transform transition-all duration-700 ease-in-out ${
               isVisible4 ? "opacity-100 blur-0" : "opacity-0 blur-2xl"
@@ -574,7 +708,7 @@ const Home = () => {
                 Contact Us via Email
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

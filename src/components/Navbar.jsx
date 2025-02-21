@@ -61,6 +61,7 @@ const Navbar = () => {
               to="https://bit.ly/ProxoCoris2025 "
               target="_blank"
             />
+            <NavItem text="Sponsorship" to="/sponsor" />
 
             {/* Dropdown */}
             <div
@@ -112,6 +113,7 @@ const Navbar = () => {
               to="https://bit.ly/ProxoCoris2025 "
               target="_blank"
             />
+            <NavItem text="Sponsorship" to="/sponsor" />
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
