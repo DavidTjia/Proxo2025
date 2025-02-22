@@ -33,10 +33,11 @@ const WhatsNew = () => {
                 </h2>
                 <div className="flex items-baseline space-x-2">
                   <span className="text-2xl font-bold text-slate-900">
-                    Rp 600.000
+                    Rp 600.000 /{" "}
+                    <span className="text-2xl font-bold text-green-600">
+                      $40
+                    </span>
                   </span>
-                  <span className="text-xl text-slate-600">/</span>
-                  <span className="text-2xl font-bold text-green-600">$40</span>
                 </div>
               </div>
 
