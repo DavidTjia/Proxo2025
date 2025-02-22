@@ -302,10 +302,10 @@ const Home = () => {
           loop
           className="w-full sm:min-h-[400px] md:min-h-[500px] lg:h-[800px]"
         >
-          <source src="/src/assets/video1.MP4" type="video/mp4" />
-          <a className="text-dark text-6xl">
+          <source src="/video1.MP4" type="video/mp4" />
+          <p className="text-dark text-6xl">
             Your browser does not support the video tag
-          </a>
+          </p>
         </video>
       </div>
 
