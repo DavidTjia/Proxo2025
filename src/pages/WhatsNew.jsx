@@ -32,7 +32,7 @@ const WhatsNew = () => {
                   WITH A SPECIAL PRIZE
                 </h2>
                 <div className="flex items-baseline space-x-2">
-                  <span className="text-3xl font-bold text-slate-900">
+                  <span className="text-2xl font-bold text-slate-900">
                     Rp 600.000
                   </span>
                   <span className="text-xl text-slate-600">/</span>
