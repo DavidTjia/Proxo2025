@@ -469,7 +469,7 @@ const Home = () => {
                 <h2 className="mb-6 text-3xl font-bold text-[#91261F] md:text-4xl">
                   Guideline
                 </h2>
-                <p className="text-gray-600">
+                <p className="pb-6 text-gray-600">
                   To ensure a smooth journey through our process, we've designed
                   a set of clear, easy-to-follow guidelines that will help you
                   understand every step. Our aim is to provide you with all the
@@ -483,14 +483,10 @@ const Home = () => {
                 <a
                   href="https://drive.google.com/drive/folders/19fccC9d2gGRb6WgQoO42vSyVee7oPjUZ?usp=drive_link"
                   target="_blank"
-                  className="group relative mt-6 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-pink-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 group-hover:from-purple-600 group-hover:to-pink-500 dark:text-white dark:focus:ring-purple-800"
+                  rel="noopener noreferrer"
+                  className="transform rounded-lg bg-primary px-8 py-3 text-center text-lg font-semibold text-white transition duration-300 ease-in-out hover:bg-[#91261F] hover:shadow-md"
                 >
-                  <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                    Explore Guidelines
-                    <span className="ml-2 inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1">
-                      →
-                    </span>
-                  </span>
+                  Explore Guideline
                 </a>
               </div>
             </div>
