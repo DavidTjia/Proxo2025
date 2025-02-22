@@ -294,19 +294,27 @@ const Home = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="blur-7xl absolute -left-48 h-96 w-96 rounded-full bg-purple-100"></div>
-        <div className="blur-7xl absolute -right-48 bottom-14 h-96 w-96 rounded-full bg-purple-100"></div>
+
+      <div className="flex justify-center">
+        <video
+          autoPlay
+          muted
+          loop
+          className="w-full sm:min-h-[400px] md:min-h-[500px] lg:h-[800px]"
+        >
+          <source src="/src/assets/video1.MP4" type="video/mp4" />
+          Your browser does not support the video tag
+        </video>
       </div>
 
-      <marquee
+      {/* <marquee
         behavior="scroll"
         direction="left"
         scrollAmount="7"
         className="pt-6"
       >
         🚀 GREAT NEWS! PROXO EXTENDED UNTIL 7 MARCH! 🔥 Don't Miss Out! 🔥
-      </marquee>
+      </marquee> */}
 
       {/* Main content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-10">
@@ -395,39 +403,38 @@ const Home = () => {
                 <p className="text-gray-600">
                   At the heart of Universitas Klabat's Faculty of Computer
                   Science,
-                  <b> PROXO (Project Extraordinary) </b> is more than just an
+                  <b>PROXO (Project Extraordinary)</b> is more than just an
                   event—it’s a movement.
                   <br />
                   <br />
-                  With the theme{" "}
+                  With the theme
                   <b>
+                    {" "}
                     "Innovation and Collaboration: Building Resilient
                     Communities to End Poverty,"
                   </b>
-                  PROXO unites innovators and changemakers to harness technology
-                  for sustainable community solutions. It’s not just a
-                  competition; it’s real action.
+                  PROXO brings together innovators and changemakers to harness
+                  technology for sustainable community solutions. It’s not just
+                  a competition—it’s real action.
                   <br />
                   <br />
                   Meanwhile,{" "}
-                  <b> CORIS (Cooperation Research Inter University) </b>
-                  serves as a global platform for academic collaboration in{" "}
-                  <b>Technology and Communication (ICT)</b>.
+                  <b>CORIS (Cooperation Research Inter-University)</b> serves as
+                  a global platform for academic collaboration in
+                  <b>Information and Communication Technology (ICT)</b>.
                   <br />
                   As an open-access international journal, CORIS publishes
                   cutting-edge research that bridges theory, experimentation,
                   and numerical analysis—driving real-world impact.
                   <br />
                   <br />
-                  By merging <b> PROXO’s hands-on innovation </b> with{" "}
-                  <b> CORIS’s academic excellence </b>, we create a powerful
-                  synergy—where technology and research come together to combat
-                  poverty.
+                  By merging <b>PROXO’s hands-on innovation</b> with{" "}
+                  <b>CORIS’s academic excellence</b>, we create a powerful
+                  synergy where technology and research unite to combat poverty.
                   <br />
                   <br />
-                  <b>Be part of this movement.</b>
-                  Together, we can drive real change through technology,
-                  research, and innovation.
+                  <b>Be part of this movement.</b> Together, we can drive real
+                  change through technology, research, and innovation.
                 </p>
               </div>
               <div className="md:w-1/2">
