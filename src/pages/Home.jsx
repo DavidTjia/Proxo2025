@@ -155,7 +155,7 @@ const Home = () => {
       title: "Last Registration",
     },
     {
-      date: "10 March - 14 March",
+      date: "07 March - 10 March",
       title: "Proposal Submission",
       content: "Deadline for submitting proposals",
     },
