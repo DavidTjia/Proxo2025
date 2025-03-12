@@ -33,6 +33,7 @@ import Universitas_Dipa_Makassar from "@/assets/Universitas_dipa_makassar.png";
 import Universitas_Klabat from "@/assets/Universitas_klabat.png";
 import Universitas_Potensi_Utama from "@/assets/Universitas_potensi_utama.png";
 import Universitas_Raharja from "@/assets/Universitas_raharja.png";
+import adproduksi from "@/assets/adproduksi.png";
 
 import ReactTypingEffect from "react-typing-effect";
 import useIntersectionObserver from "@/components/useIntersectionObserver";
@@ -81,6 +82,8 @@ const Home = () => {
     { id: 3, name: "AMIKOM Solo", logo: AMIKOM_Solo },
     { id: 4, name: "Binus University", logo: Binus_university },
     { id: 5, name: "ISB Atmaluhur", logo: ISB_Atmaluhur },
+    { id: 5, name: "Adproduksi", logo: adproduksi },
+
     {
       id: 6,
       name: "Institut Teknologi dan Bisnis PalComTech",
