@@ -298,7 +298,7 @@ const Home = () => {
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Background decorative elements */}
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <video
           autoPlay
           muted
@@ -310,7 +310,7 @@ const Home = () => {
             Your browser does not support the video tag
           </p>
         </video>
-      </div>
+      </div> */}
 
       {/* <marquee
         behavior="scroll"
