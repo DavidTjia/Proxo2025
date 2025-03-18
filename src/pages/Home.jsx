@@ -72,9 +72,24 @@ const Home = () => {
   };
 
   const sponsors = [
-    { id: 1, name: "Sponsor 1", logo: sponsor1 },
-    { id: 2, name: "Sponsor 2", logo: sponsor2 },
-    { id: 3, name: "Sponsor 3", logo: sponsor3 },
+    {
+      id: 1,
+      name: "Sponsor 1",
+      logo: sponsor1,
+      url: "https://coris-group.org/",
+    },
+    {
+      id: 2,
+      name: "Sponsor 2",
+      logo: sponsor2,
+      url: "https://www.unklab.ac.id/",
+    },
+    {
+      id: 3,
+      name: "Sponsor 3",
+      logo: sponsor3,
+      url: "https://www.dicoding.com/",
+    },
   ];
   const partnerships = [
     { id: 1, name: "AMIKOM Purwokerto", logo: AMIKOM_Purwokerto },
@@ -82,7 +97,12 @@ const Home = () => {
     { id: 3, name: "AMIKOM Solo", logo: AMIKOM_Solo },
     { id: 4, name: "Binus University", logo: Binus_university },
     { id: 5, name: "ISB Atmaluhur", logo: ISB_Atmaluhur },
-    { id: 5, name: "Adproduksi", logo: adproduksi },
+    {
+      id: 5,
+      name: "Adproduksi",
+      logo: adproduksi,
+      url: "https://www.instagram.com/adproduksi_?igsh=MXJjaG90ejhybDZkcQ==",
+    },
 
     {
       id: 6,
@@ -638,16 +658,19 @@ const Home = () => {
               </h2>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
                 {sponsors.map((sponsor) => (
-                  <div
+                  <a
                     key={sponsor.id}
-                    className="items-centerrounded-lg flex p-4 hover:shadow-md"
+                    href={sponsor.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center rounded-lg p-4 hover:shadow-md"
                   >
                     <img
                       src={sponsor.logo}
                       alt={`${sponsor.name} logo`}
-                      className="h-30 w-auto object-contain"
+                      className="h-30 w-auto object-contain transition-transform duration-300 hover:scale-105"
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -665,16 +688,19 @@ const Home = () => {
               </h2>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6">
                 {partnerships.map((partenership) => (
-                  <div
+                  <a
                     key={partenership.id}
                     className="items-centerrounded-lg flex p-4 hover:shadow-md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={partenership.url}
                   >
                     <img
                       src={partenership.logo}
                       alt={`${partenership.name} logo`}
                       className="h-30 w-auto object-contain"
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
