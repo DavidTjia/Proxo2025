@@ -1,306 +1,313 @@
-// import React, { useState } from "react";
-// import { Trophy, Medal, Award, Star } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-// const Winner = () => {
-//   const [hoveredRow, setHoveredRow] = useState(null);
+const AnnouncementCountdown = () => {
+  const [activeCategory, setActiveCategory] = useState("Business Plan");
 
-//   const initialData = [
-//     {
-//       team: "Example Team 1",
-//       institution: "Example University 1",
-//       project: "Example Project 1",
-//       rank: 1,
-//       competition: "Example Competition 1",
-//       icon: Trophy,
-//     },
-//     {
-//       team: "Example Team 2",
-//       institution: "Example University 2",
-//       project: "Example Project 2",
-//       rank: 2,
-//       competition: "Example Competition 1",
-//       icon: Medal,
-//     },
-//     {
-//       team: "Example Team 3",
-//       institution: "Example University 3",
-//       project: "Example Project 3",
-//       rank: 3,
-//       competition: "Example Competition 1",
-//       icon: Award,
-//     },
-//     {
-//       team: "Example Team 4",
-//       institution: "Example University 4",
-//       project: "Example Project 4",
-//       rank: 4,
-//       competition: "Example Competition 1",
-//       icon: Star,
-//     },
-//     {
-//       team: "Example Team 5",
-//       institution: "Example University 5",
-//       project: "Example Project 5",
-//       rank: 1,
-//       competition: "Example Competition 2",
-//       icon: Trophy,
-//     },
-//     {
-//       team: "Example Team 6",
-//       institution: "Example University 6",
-//       project: "Example Project 6",
-//       rank: 2,
-//       competition: "Example Competition 2",
-//       icon: Medal,
-//     },
-//     {
-//       team: "Example Team 7",
-//       institution: "Example University 7",
-//       project: "Example Project 7",
-//       rank: 3,
-//       competition: "Example Competition 2",
-//       icon: Award,
-//     },
-//     {
-//       team: "Example Team 8",
-//       institution: "Example University 8",
-//       project: "Example Project 8",
-//       rank: 4,
-//       competition: "Example Competition 2",
-//       icon: Star,
-//     },
-//     {
-//       team: "Example Team 9",
-//       institution: "Example University 9",
-//       project: "Example Project 9",
-//       rank: 1,
-//       competition: "Example Competition 3",
-//       icon: Trophy,
-//     },
-//     {
-//       team: "Example Team 10",
-//       institution: "Example University 10",
-//       project: "Example Project 10",
-//       rank: 2,
-//       competition: "Example Competition 3",
-//       icon: Medal,
-//     },
-//     {
-//       team: "Example Team 11",
-//       institution: "Example University 11",
-//       project: "Example Project 11",
-//       rank: 3,
-//       competition: "Example Competition 3",
-//       icon: Award,
-//     },
-//     {
-//       team: "Example Team 12",
-//       institution: "Example University 12",
-//       project: "Example Project 12",
-//       rank: 4,
-//       competition: "Example Competition 3",
-//       icon: Star,
-//     },
-//     {
-//       team: "Example Team 13",
-//       institution: "Example University 13",
-//       project: "Example Project 13",
-//       rank: 1,
-//       competition: "Example Competition 4",
-//       icon: Trophy,
-//     },
-//     {
-//       team: "Example Team 14",
-//       institution: "Example University 14",
-//       project: "Example Project 14",
-//       rank: 2,
-//       competition: "Example Competition 4",
-//       icon: Medal,
-//     },
-//     {
-//       team: "Example Team 15",
-//       institution: "Example University 15",
-//       project: "Example Project 15",
-//       rank: 3,
-//       competition: "Example Competition 4",
-//       icon: Award,
-//     },
-//     {
-//       team: "Example Team 16",
-//       institution: "Example University 16",
-//       project: "Example Project 16",
-//       rank: 4,
-//       competition: "Example Competition 4",
-//       icon: Star,
-//     },
-//     {
-//       team: "Example Team 17",
-//       institution: "Example University 17",
-//       project: "Example Project 17",
-//       rank: 1,
-//       competition: "Example Competition 5",
-//       icon: Trophy,
-//     },
-//     {
-//       team: "Example Team 18",
-//       institution: "Example University 18",
-//       project: "Example Project 18",
-//       rank: 2,
-//       competition: "Example Competition 5",
-//       icon: Medal,
-//     },
-//     {
-//       team: "Example Team 19",
-//       institution: "Example University 19",
-//       project: "Example Project 19",
-//       rank: 3,
-//       competition: "Example Competition 5",
-//       icon: Award,
-//     },
-//     {
-//       team: "Example Team 20",
-//       institution: "Klabat University",
-//       project: "Example Project 20",
-//       rank: 4,
-//       competition: "Example Competition 5",
-//       icon: Star,
-//     },
-//   ];
+  // Modified data structure with university information
+  const allTeamData = {
+    "Business Plan": {
+      title: "BUSINESS PLAN WINNERS",
+      subtitle: "Competition Results",
+      color: "bg-orange-600",
+      buttonColor: "bg-orange-600",
+      headerColor: "bg-orange-500",
+      stripColor: "bg-orange-100",
+      teams: [
+        {
+          no: "1",
+          category: "Winner 1st Place 🥇",
+          team: "Nawa Cita",
+          institute: "Institut Teknologi dan Bisnis STIKOM Bali"
+        },
+        {
+          no: "2",
+          category: "Winner 2nd Place 🥈",
+          team: "ChrisBy",
+          institute: "Brawijaya University"
+        },
+        {
+          no: "3",
+          category: "Winner 3rd Place 🥉",
+          team: "PENTARA TEAM",
+          institute: "ITB STIKOM BALI"
+        },
+        {
+          no: "4",
+          category: "Best Innovation",
+          team: "ACC Team",
+          institute: "Ming Chi University of Technology"
+        },
+        {
+          no: "5",
+          category: "Best Presentation",
+          team: "Pioneer Impact",
+          institute: "Universitas Klabat"
+        },
+      ],
+    },
+    "Business Case": {
+      title: "BUSINESS CASE WINNERS",
+      subtitle: "Competition Results",
+      color: "bg-green-600",
+      buttonColor: "bg-green-600",
+      headerColor: "bg-green-500",
+      stripColor: "bg-green-100",
+      teams: [
+        {
+          no: "1",
+          category: "Winner 1st Place 🥇",
+          team: "Vyaparavijeta",
+          institute: "Institut Teknologi Bandung"
+        },
+        {
+          no: "2",
+          category: "Winner 2nd Place 🥈",
+          team: "WTK Team",
+          institute: "Ming Chi University of Technology"
+        },
+        {
+          no: "3",
+          category: "Winner 3rd Place 🥉",
+          team: "Adventura",
+          institute: "Institut Teknologi Bandung"
+        },
+        {
+          no: "4",
+          category: "Best Problem Solving",
+          team: "InnovateX",
+          institute: "Universitas Klabat"
+        },
+        {
+          no: "5",
+          category: "Best Innovation",
+          team: "PalComTech Troops",
+          institute: "Institut Teknologi dan Bisnis PalComTech"
+        },
+      ],
+    },
+    "Mobile App": {
+      title: "MOBILE APP DEVELOPMENT WINNERS",
+      subtitle: "Competition Results",
+      color: "bg-blue-600",
+      buttonColor: "bg-blue-600",
+      headerColor: "bg-blue-500",
+      stripColor: "bg-blue-100",
+      teams: [
+        {
+          no: "1",
+          category: "Winner 1st Place 🥇",
+          team: "Gurita Langit",
+          institute: "Gurita Langit Technologies"
+        },
+        {
+          no: "2",
+          category: "Winner 2nd Place 🥈",
+          team: "GenSmart",
+          institute: "Universitas Dipa Makassar"
+        },
+        {
+          no: "3",
+          category: "Winner 3rd Place 🥉",
+          team: "PASCA SARJANA ATMA LUHUR",
+          institute: "Institut Sains dan Bisnis Atma Luhur"
+        },
+        {
+          no: "4",
+          category: "Most Impactful App",
+          team: "KOTLIN WIZARDS",
+          institute: "Institut Sains dan Bisnis Atma Luhur"
+        },
+        {
+          no: "5",
+          category: "Best UI/UX Design",
+          team: "Nutrilab",
+          institute: "Universitas Teknologi Bandung"
+        },
+      ],
+    },
+    "Web Dev": {
+      title: "WEB DEVELOPMENT WINNERS",
+      subtitle: "Competition Results",
+      color: "bg-indigo-600",
+      buttonColor: "bg-indigo-600",
+      headerColor: "bg-indigo-500",
+      stripColor: "bg-indigo-100",
+      teams: [
+        {
+          no: "1",
+          category: "Winner 1st Place 🥇",
+          team: "Proxo Team 2 UBG",
+          institute: "Bumigora university"
+        },
+        {
+          no: "2",
+          category: "Winner 2nd Place 🥈",
+          team: "Jaya Coding",
+          institute: "Amikom Purwokerto University"
+        },
+        {
+          no: "3",
+          category: "Winner 3rd Place 🥉",
+          team: "Namesa",
+          institute: "SMK IDN Boarding School"
+        },
+        {
+          no: "4",
+          category: "Best Functionality",
+          team: "Tim 3 UBG",
+          institute: "Bumigora university"
+        },
+        {
+          no: "5",
+          category: "Best UI/UX Design",
+          team: "Altep",
+          institute: "University of Dian Nuswantoro"
+        },
+      ],
+    },
+    "Short Movie": {
+      title: "SHORT MOVIE WINNERS",
+      subtitle: "Competition Results",
+      color: "bg-purple-600",
+      buttonColor: "bg-purple-600",
+      headerColor: "bg-purple-500",
+      stripColor: "bg-purple-100",
+      teams: [
+        {
+          no: "1",
+          category: "Winner 1st Place 🥇",
+          team: "Taxsyn Bercerita",
+          institute: "ITB STIKOM BALI"
+        },
+        {
+          no: "2",
+          category: "Winner 2nd Place 🥈",
+          team: "UKM HIMATOGRAPHY",
+          institute: "ITB STIKOM Bali"
+        },
+        {
+          no: "3",
+          category: "Winner 3rd Place 🥉",
+          team: "TRISPERA",
+          institute: "ITB STIKOM BALI"
+        },
+        {
+          no: "4",
+          category: "Best Storyline",
+          team: "Cinecomtech",
+          institute: "Institut Teknologi dan Bisnis Palcomtech"
+        },
+        {
+          no: "5",
+          category: "Best Cinematography",
+          team: "Pisang Telor",
+          institute: "Universitas Brawijaya"
+        },
+      ],
+    },
+  };
 
-//   const competitionTypes = [
-//     "Example Competition 1",
-//     "Example Competition 2",
-//     "Example Competition 3",
-//     "Example Competition 4",
-//     "Example Competition 5",
-//   ];
+  // Handle category change
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+  };
 
-//   const getRankStyles = (rank) => {
-//     const styles = {
-//       1: {
-//         badge:
-//           "bg-gradient-to-r from-fuchsia-400 to-pink-400 shadow-pink-200/50",
-//         text: "text-pink-900",
-//         glow: "shadow-lg shadow-pink-200/50",
-//       },
-//       2: {
-//         badge:
-//           "bg-gradient-to-r from-purple-400 to-fuchsia-400 shadow-purple-200/50",
-//         text: "text-purple-900",
-//         glow: "shadow-lg shadow-purple-200/50",
-//       },
-//       3: {
-//         badge:
-//           "bg-gradient-to-r from-violet-400 to-purple-400 shadow-violet-200/50",
-//         text: "text-violet-900",
-//         glow: "shadow-lg shadow-violet-200/50",
-//       },
-//       4: {
-//         badge:
-//           "bg-gradient-to-r from-pink-400 to-violet-400 shadow-pink-200/50",
-//         text: "text-pink-900",
-//         glow: "shadow-lg shadow-pink-200/50",
-//       },
-//     };
-//     return styles[rank] || styles[4];
-//   };
+  // Tailwind utility class for ring effect based on category
+  const getRingClass = (category) => {
+    const baseColor = allTeamData[category].buttonColor.split("-")[1];
+    return `ring-4 ring-opacity-50 ring-${baseColor}-300`;
+  };
 
-//   const renderTable = (competition) => {
-//     const data = initialData.filter((item) => item.competition === competition);
-//     return (
-//       <div className="mb-8 rounded-2xl bg-white p-1 shadow-xl">
-//         <div className="overflow-hidden rounded-xl">
-//           {/* Table Header */}
-//           <div className="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-purple-500">
-//             <div className="p-6 pb-2 text-center">
-//               <h1 className="text-3xl font-bold text-white">{competition}</h1>
-//             </div>
-//             <div className="p-6 pt-4">
-//               <div className="grid grid-cols-4 gap-4">
-//                 <div className="text-lg font-semibold text-white">Team</div>
-//                 <div className="text-lg font-semibold text-white">
-//                   Institution
-//                 </div>
-//                 <div className="text-lg font-semibold text-white">
-//                   Project Title
-//                 </div>
-//                 <div className="text-right text-lg font-semibold text-white">
-//                   Rank
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Table Body */}
-//           <div className="divide-y divide-pink-100">
-//             {data.length > 0 ? (
-//               data.map((item, index) => {
-//                 const rankStyle = getRankStyles(item.rank);
-//                 const Icon = item.icon;
-//                 return (
-//                   <div
-//                     key={index}
-//                     className={`grid grid-cols-4 gap-4 p-6 transition-all duration-300 ease-in-out ${hoveredRow === index ? "scale-[1.01] bg-fuchsia-50/50" : "bg-white"}`}
-//                     onMouseEnter={() => setHoveredRow(index)}
-//                     onMouseLeave={() => setHoveredRow(null)}
-//                   >
-//                     <div className="flex items-center space-x-3">
-//                       <span className="font-medium text-gray-900">
-//                         {item.team}
-//                       </span>
-//                     </div>
-//                     <div className="text-gray-600">{item.institution}</div>
-//                     <div className="font-medium text-fuchsia-600">
-//                       {item.project}
-//                     </div>
-//                     <div className="flex items-center justify-end space-x-2">
-//                       <div
-//                         className={`flex h-12 w-12 items-center justify-center rounded-full ${rankStyle.badge} transition-all duration-300 ease-in-out ${hoveredRow === index ? rankStyle.glow : ""}`}
-//                       >
-//                         <Icon className={`h-6 w-6 ${rankStyle.text}`} />
-//                       </div>
-//                       <span className={`text-2xl font-bold ${rankStyle.text}`}>
-//                         {item.rank}
-//                       </span>
-//                     </div>
-//                   </div>
-//                 );
-//               })
-//             ) : (
-//               <div className="p-8 text-center text-gray-500">
-//                 No results found.
-//               </div>
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-fuchsia-50 to-purple-50 p-8">
-//       <div className="mx-auto max-w-7xl">
-//         {/* Render each competition table */}
-//         {competitionTypes.map((competition, index) => renderTable(competition))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Winner;
-import React from "react";
-
-function Winner() {
   return (
-    <div className="flex h-[86vh] items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold md:text-6xl">Coming Soon</h1>
-        <p className="mt-4 text-lg text-gray-600 md:text-2xl">
-          Stay tuned! Exciting updates are on the way.
+    <div className="mx-auto min-h-screen max-w-6xl p-4">
+      <div className="mb-8 text-center">
+        <h1 className="mb-2 text-4xl font-bold">
+          <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+            Competition WINNERS Announcement
+          </span> 
+        </h1>
+        <p className="text-gray-600">
+          Select a category to view the competition winners
         </p>
       </div>
+
+      <div className="mb-8">
+        <motion.div
+          key={activeCategory + "-filter"}
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 10 }}
+          className="flex flex-wrap justify-center gap-3"
+        >
+          {Object.keys(allTeamData).map((category) => (
+            <motion.button
+              key={category}
+              whileTap={{ scale: 0.95 }}
+              className={`rounded-lg px-6 py-3 font-bold text-white shadow-md transition ${
+                activeCategory === category
+                  ? `${allTeamData[category].buttonColor} ${activeCategory === category ? "ring-4 ring-opacity-50" : ""}`
+                  : "bg-gray-500 hover:bg-gray-600"
+              }`}
+              onClick={() => handleCategoryChange(category)}
+            >
+              {category}
+            </motion.button>
+          ))}
+        </motion.div>
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeCategory + "-content"}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          className="overflow-hidden rounded-xl bg-white shadow-lg"
+        >
+          <div
+            className={`${allTeamData[activeCategory].color} p-4 text-center text-white`}
+          >
+            <h2 className="text-2xl font-extrabold tracking-wide">
+              {allTeamData[activeCategory].title}
+            </h2>
+            <p className="mt-1 font-medium">
+              {allTeamData[activeCategory].subtitle}
+            </p>
+          </div>
+
+          <div className="overflow-x-auto p-4">
+            <table className="w-full border-collapse bg-white text-left text-sm">
+              <thead>
+                <tr
+                  className={`${allTeamData[activeCategory].headerColor} text-white`}
+                >
+                  <th className="rounded-tl-lg border px-4 py-3 font-bold">No</th>
+                  <th className="border px-4 py-3 font-bold">Award Category</th>
+                  <th className="border px-4 py-3 font-bold">Team</th>
+                  <th className="rounded-tr-lg border px-4 py-3 font-bold">Institute</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allTeamData[activeCategory].teams.map((team, index) => (
+                  <tr
+                    key={team.no}
+                    className={`hover:bg-gray-50 ${index % 2 === 0 ? allTeamData[activeCategory].stripColor : "bg-white"}`}
+                  >
+                    <td className="border px-4 py-3 font-semibold">{team.no}</td>
+                    <td className="border px-4 py-3 font-medium">{team.category}</td>
+                    <td className="border px-4 py-3">{team.team}</td>
+                    <td className="border px-4 py-3">{team.institute}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
-}
+};
 
-export default Winner;
+export default AnnouncementCountdown;
