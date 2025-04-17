@@ -1,18 +1,25 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import logopx from "@/assets/proxo.png";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Auto-close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsDropdownOpen(false);
+  }, [location]);
 
   const NavItem = ({ text, to, target }) => {
-    const isExternal = target === "_blank"; // Periksa apakah ini link eksternal
+    const isExternal = target === "_blank";
     return isExternal ? (
       <a
         href={to}
         target={target}
-        rel="noopener noreferrer" // Keamanan tambahan untuk link eksternal
+        rel="noopener noreferrer"
         className="block px-4 py-2 text-lg font-semibold text-gray-700 transition-all duration-300 hover:text-purple-600"
       >
         {text}
@@ -64,13 +71,7 @@ const Navbar = () => {
             <NavItem text="Sponsorship" to="/sponsor" />
 
             {/* Dropdown */}
-            <div
-              className="group relative"
-              // onClick={() => setIsDropdownOpen((prev) => !prev)}
-              // onMouseLeave={() =>
-              //  .s setTimeout(() => setIsDropdownOpen(false), 3000)
-              // }
-            >
+            <div className="group relative">
               <button className="relative px-4 py-2 text-lg font-semibold text-gray-700 transition-all duration-300 hover:text-purple-600">
                 Announcement
                 <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
@@ -135,4 +136,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;
