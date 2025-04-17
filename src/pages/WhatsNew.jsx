@@ -10,7 +10,7 @@ const SpaceCountdown = () => {
 
   useEffect(() => {
     // Set target date to April 17, 2025 at 9:00 AM in WITA (UTC+8)
-    const targetDate = new Date(Date.UTC(2025, 3, 17, 1, 0, 0)); 
+    const targetDate = new Date(Date.UTC(2025, 3, 17, 2, 0, 0)); 
 
     const calculateTimeLeft = () => {
       const now = new Date();
